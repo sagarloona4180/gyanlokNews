@@ -31,7 +31,14 @@
               "src/assets"
             ],
             "styles": [
+              "src/assets/css/mdi/css/materialdesignicons.min.css",
+              "src/assets/css/owl.carousel/dist/assets/owl.theme.default.min.css",
+              "src/assets/css/aos/dist/aos.css/aos.css",
+              "src/assets/css/owl.carousel/dist/assets/owl.theme.default.min.css",
+              "src/assets/css/style.css",
+              "src/assets/scss/style.scss",
               "src/styles.scss"
+             
             ],
             "scripts": []
           },
