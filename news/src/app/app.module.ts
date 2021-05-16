@@ -19,6 +19,7 @@ import { SportsNewsComponent } from './components/dashboard/sports-news/sports-n
 import { InternationalNewsComponent } from './components/dashboard/international-news/international-news.component';
 import { CountryNewsComponent } from './components/dashboard/country-news/country-news.component';
 import { MainHeadlineComponent } from './components/dashboard/main-headline/main-headline.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { MainHeadlineComponent } from './components/dashboard/main-headline/main
     SportsNewsComponent,
     InternationalNewsComponent,
     CountryNewsComponent,
-    MainHeadlineComponent
+    MainHeadlineComponent,
+    PageNotFoundComponent
   
   ],
   imports: [
