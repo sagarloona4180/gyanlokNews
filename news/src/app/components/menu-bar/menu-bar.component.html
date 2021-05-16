@@ -1,12 +1,12 @@
 <div
-class="navbar-collapse justify-content-center collapse"
+class="navbar-collapse justify-content-center collapse" [ngClass]="{'show':navbarStatus}"
 id="navbarSupportedContent"
 >
 <ul
   class="navbar-nav d-lg-flex justify-content-between align-items-center"
 >
   <li>
-    <button class="navbar-close">
+    <button  (click)="closeNavabar()" class="navbar-close" [ngStyle]="{'display': navbarStatus ? 'inline-block':'none'}">
       <i class="mdi mdi-close"></i>
     </button>
   </li>

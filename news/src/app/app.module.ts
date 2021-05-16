@@ -20,6 +20,7 @@ import { InternationalNewsComponent } from './components/dashboard/international
 import { CountryNewsComponent } from './components/dashboard/country-news/country-news.component';
 import { MainHeadlineComponent } from './components/dashboard/main-headline/main-headline.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
