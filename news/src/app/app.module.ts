@@ -21,6 +21,7 @@ import { CountryNewsComponent } from './components/dashboard/country-news/countr
 import { MainHeadlineComponent } from './components/dashboard/main-headline/main-headline.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -48,7 +49,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule 
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
