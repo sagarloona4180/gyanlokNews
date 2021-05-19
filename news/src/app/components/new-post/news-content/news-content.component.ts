@@ -19,7 +19,7 @@ export class NewsContentComponent implements OnInit {
     this.route.params.subscribe( params => this.params = params);
 
     this.http.post(this.url, this.params).subscribe((x:any)=>{
-    
+      x.Images = URLs.getAPIUrl() + x.Images;
       this.newsInfo =x;
 
       console.log(x);

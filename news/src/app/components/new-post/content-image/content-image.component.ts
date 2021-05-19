@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-content-image',
@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./content-image.component.scss']
 })
 export class ContentImageComponent implements OnInit {
-
+  @Input() newsInfo :any= {};
   constructor() { }
 
   ngOnInit(): void {

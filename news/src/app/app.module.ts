@@ -24,6 +24,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule } from '@angular/common/http';
 import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -54,7 +57,8 @@ import { AdminComponent } from './components/admin/admin.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    HttpClientModule 
+    HttpClientModule ,
+    ReactiveFormsModule
     
   ],
   providers: [],

@@ -5,18 +5,18 @@
                 <h2 class="title">Add New News</h2>
             </div>
             <div class="card-body">
-                <form method="POST">
+                <form  [formGroup]="form" >
                     <div class="form-row">
                         <div class="name">Title</div>
                         <div class="value">
-                            <input class="input--style-6" type="text" name="full_name"  placeholder="New Title">
+                            <input class="input--style-6" formControlName="Title"  type="text" name="full_name"  placeholder="New Title">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="name"> Location</div>
                         <div class="value">
                             <div class="input-group">
-                                <input class="input--style-6" type="text" name="Location" placeholder="Kathua">
+                                <input formControlName="Location" class="input--style-6" type="text" name="Location" placeholder="Location Full Address">
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                         <div class="name"> Country</div>
                         <div class="value">
                             <div class="input-group">
-                                <input class="input--style-6" type="text" name="Location" placeholder="Kathua">
+                                <input  formControlName="Country" class="input--style-6" type="text" name="Location" placeholder="Country">
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="name"> State</div>
                         <div class="value">
                             <div class="input-group">
-                                <input class="input--style-6" type="text" name="Location" placeholder="Kathua">
+                                <input formControlName="State" class="input--style-6" type="text" name="Location" placeholder="State">
                             </div>
                         </div>
                     </div>
@@ -43,7 +43,7 @@
                         <div class="name"> District</div>
                         <div class="value">
                             <div class="input-group">
-                                <input class="input--style-6" type="text" name="Location" placeholder="Kathua">
+                                <input  formControlName="District" class="input--style-6" type="text" name="Location" placeholder="District">
                             </div>
                         </div>
                     </div>
@@ -51,7 +51,28 @@
                         <div class="name">Description</div>
                         <div class="value">
                             <div class="input-group">
-                                <textarea class="textarea--style-6" name="message" placeholder="News DesScription"></textarea>
+                                <textarea  formControlName="Description" class="textarea--style-6" name="message" placeholder="News Description"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+           
+
+
+                    <div class="form-row">
+                        <div class="name">Description 2</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <textarea formControlName="Description2" class="textarea--style-6" name="message" placeholder="News Description 2"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Description 3</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <textarea formControlName="Description3" class="textarea--style-6" name="message" placeholder="News Description 3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -60,7 +81,7 @@
                         <div class="name"> Video Link</div>
                         <div class="value">
                             <div class="input-group">
-                                <input class="input--style-6" type="text" name="Location" placeholder="Kathua">
+                                <input  formControlName="Video" class="input--style-6" type="text" name="Location" placeholder="Youtube Video Link">
                             </div>
                         </div>
                     </div>
@@ -69,7 +90,16 @@
                         <div class="name">Author</div>
                         <div class="value">
                             <div class="input-group">
-                                <input class="input--style-6" type="text" name="Location" placeholder="Kathua">
+                                <input formControlName="Author" class="input--style-6" type="text" name="Location" placeholder="News Author">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Department</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input formControlName="Deptt" class="input--style-6" type="text" name="Location" placeholder="News Author">
                             </div>
                         </div>
                     </div>
@@ -78,7 +108,7 @@
                         <div class="name">Upload Image</div>
                         <div class="value">
                             <div class="input-group js-input-file">
-                                <input class="input-file" type="file" name="file_cv" id="file">
+                                <input class="input-file"   (change)="onSelectFile($event)" type="file" name="file_cv" id="file">
                                 <label class="label--file" for="file">Choose file</label>
                                 <span class="input-file__info">No file chosen</span>
                             </div>
@@ -88,7 +118,7 @@
                 </form>
             </div>
             <div class="card-footer">
-                <button class="btn btn--radius-2 btn--blue-2" type="submit">Send Application</button>
+                <button class="btn btn--radius-2 btn--blue-2"  (click)="addNewnews()" [disabled]="!form.valid">Send Application</button>
             </div>
         </div>
     </div>
