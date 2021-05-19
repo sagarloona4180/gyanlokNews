@@ -13,7 +13,7 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
 
-
+this.upload();
 
   }
 
@@ -21,23 +21,14 @@ export class AppComponent {
 
   
     const obj = {
-       Author :'Sagar kumar',
-       Title:'Six Murder 5 Injured in two group clash in kathua',
-       Description :'dfdfdfdfdfdfdf dgdggdfdf hhggdfdfhdfhdfhdfhjhdf h hfdfhudhfdhjdfhdfhdfhdfhd hhfhdfdhfjhdf hfhjhdfjhdfhhdfhdfjh jhfddfjhdfjhdfhj',
-       Location :'',
-       Deptt:'State',
-       Country:'',
-       State:'Jammu & kashmir',
-       District:'Kathua',
-       Video :'',
-       images:this.imagePath
-
+   
+      "uniqueID":34
 
        
           }
 
     
-    this.http.post('http://localhost/scripts/createnews.php',obj ).subscribe(x => {
+    this.http.post('http://localhost/scripts/singleRead.php',obj ).subscribe(x => {
       console.log(x);
     });
   }

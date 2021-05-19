@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainHeadlineComponent implements OnInit {
 
+mainNews :any= [];
+latestNews :any[] = [];
   constructor() { }
 
   ngOnInit(): void {
+   // this.mainNews = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-lg-8">
-      <div class="owl-carousel owl-theme" id="main-banner-carousel">
-        <div class="item">
+     
+        <!-- <div class="item">
           <div class="carousel-content-wrapper mb-2">
             <div class="carousel-content">
               <h1 class="font-weight-bold">
@@ -84,105 +84,54 @@
               <img  src="assets/images/dashboard/star-magazine-9.jpg" alt="" />
             </div>
           </div>
-        </div>
-      </div>
+        </div> -->
+    
+    
+        <ngb-carousel  [showNavigationIndicators]="false" *ngIf="mainNews">
+          <ng-container *ngFor="let news of mainNews">
+            <ng-template ngbSlide>
+              <div class="picsum-img-wrapper">
+                <img [src]="news" alt="Random first slide">
+              </div>
+              <div class="carousel-caption">
+                <h3>{{ news.Title}}</h3>
+               
+  
+                <p class="text-color m-0 pt-2 d-flex align-items-center">
+                  <span class="fs-10 mr-1">{{news.Date}}</span>
+                  <i class="mdi mdi-bookmark-outline mr-3"></i>
+                  <span class="fs-10 mr-1">{{news.Author}}</span>
+                  <i class="mdi mdi-comment-outline"></i>
+                </p>
+              </div>
+            </ng-template>
+          </ng-container>
+       
+       
+        </ngb-carousel>
+        
+    
+    
     </div>
     <div class="col-lg-4">
-      <div class="row">
-        <div class="col-sm-6">
+      <div class="row" *ngFor="let item of latestNews">
+        <div class="col-sm-6" *ngFor="let news of item">
           <div class="py-3 border-bottom">
             <div class="d-flex align-items-center pb-2">
               <img
-              src="assets/images/dashboard/star-magazine-9.jpg"
+              src="{{news.images}}"
                 class="img-xs img-rounded mr-2"
                 alt="thumb"
               />
-              <span class="fs-12 text-muted">Henry Itondo</span>
+              <!-- <span class="fs-12 text-muted">Henry Itondo</span> -->
             </div>
             <p class="fs-14 m-0 font-weight-medium line-height-sm">
-              The Most And Least Visited Countries In The World
+             {{news.Title}}
             </p>
           </div>
         </div>
-        <div class="col-sm-6">
-          <div class="py-3 border-bottom">
-            <div class="d-flex align-items-center pb-2">
-              <img
-              src="assets/images/dashboard/star-magazine-9.jpg"
-                class="img-xs img-rounded mr-2"
-                alt="thumb"
-              />
-              <span class="fs-12 text-muted">Oka Tomoaki</span>
-            </div>
-            <p class="fs-14 m-0 font-weight-medium line-height-sm">
-              The Best Places to Travel in month August
-            </p>
-          </div>
-        </div>
+       
       </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="pt-4 pb-4 border-bottom">
-            <div class="d-flex align-items-center pb-2">
-              <img
-              src="assets/images/dashboard/star-magazine-9.jpg"
-                class="img-xs img-rounded mr-2"
-                alt="thumb"
-              />
-              <span class="fs-12 text-muted">Joana Leite</span>
-            </div>
-            <p class="fs-14 m-0 font-weight-medium line-height-sm">
-              Focus On Fun And Challenging Lifetime Activities
-            </p>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="pt-3 pb-4 border-bottom">
-            <div class="d-flex align-items-center pb-2">
-              <img
-              src="assets/images/dashboard/star-magazine-9.jpg"
-                class="img-xs img-rounded mr-2"
-                alt="thumb"
-              />
-              <span class="fs-12 text-muted">Rita Leite</span>
-            </div>
-            <p class="fs-14 m-0 font-weight-medium line-height-sm">
-              Bread Is The Most Widely Consumed Food In The World
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="pt-4 pb-4">
-            <div class="d-flex align-items-center pb-2">
-              <img
-              src="assets/images/dashboard/star-magazine-9.jpg"
-                class="img-xs img-rounded mr-2"
-                alt="thumb"
-              />
-              <span class="fs-12 text-muted">Jurrien Oldhof</span>
-            </div>
-            <p class="fs-14 m-0 font-weight-medium line-height-sm">
-              What Is Music, And What Does It Mean To Us
-            </p>
-          </div>
-        </div>
-        <div class="col-sm-6">
-          <div class="pt-3 pb-4">
-            <div class="d-flex align-items-center pb-2">
-              <img
-              src="assets/images/dashboard/star-magazine-9.jpg"
-                class="img-xs img-rounded mr-2"
-                alt="thumb"
-              />
-              <span class="fs-12 text-muted">Yamaha Toshinobu</span>
-            </div>
-            <p class="fs-14 m-0 font-weight-medium line-height-sm">
-              Is Breakfast The Most Important Meal Of The Day
-            </p>
-          </div>
-        </div>
-      </div>
+    
     </div>
   </div>

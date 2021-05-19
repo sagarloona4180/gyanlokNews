@@ -22,6 +22,8 @@ import { MainHeadlineComponent } from './components/dashboard/main-headline/main
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {HttpClientModule } from '@angular/common/http';
+import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import {HttpClientModule } from '@angular/common/http';
     InternationalNewsComponent,
     CountryNewsComponent,
     MainHeadlineComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ComingSoonComponent,
+    AdminComponent
   
   ],
   imports: [

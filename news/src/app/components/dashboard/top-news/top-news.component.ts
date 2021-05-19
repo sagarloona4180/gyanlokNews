@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class TopNewsComponent implements OnInit {
 
+  topNewsList:any[] = [];
   constructor(private Route:Router) { }
 
   ngOnInit(): void {

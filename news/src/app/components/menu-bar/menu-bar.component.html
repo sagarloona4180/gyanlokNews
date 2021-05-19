@@ -11,31 +11,48 @@ id="navbarSupportedContent"
     </button>
   </li>
   <li class="nav-item active">
-    <a class="nav-link active" href="index.html">Home</a>
+    <a class="nav-link active"  [routerLink]=" ['./dashboard']"
+    routerLinkActive="active">Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/world.html">State</a>
+    <a class="nav-link"     [routerLink]=" ['./state']">State</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/author.html">Country</a>
+    <a class="nav-link"  [routerLink]=" ['./country']">Country</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/news-post.html">Internation</a>
+    <a class="nav-link" [routerLink]=" ['./international']" >Internation</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/business.html">Business</a>
+    <a class="nav-link" [routerLink]=" ['./business']" >Business</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/sports.html">Sports</a>
+    <a class="nav-link" [routerLink]=" ['./sport']">Sports</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/art.html">Art</a>
+    <a class="nav-link"[routerLink]=" ['./art']">Art</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/politics.html">Education</a>
+    <a class="nav-link" [routerLink]=" ['./education']">Education</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="pages/real-estate.html">Learning </a>
+    <a class="nav-link" [routerLink]=" ['./lerning']">Learning </a>
+  </li>
+
+  <li class="nav-item">
+
+    <div ngbDropdown class="d-inline-block">
+      <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle>Horoscope</a>
+      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+        <button ngbDropdownItem>Daily </button>
+        <button ngbDropdownItem>Weekly</button>
+        
+      </div>
+    </div>
+  </li>
+
+  <li class="nav-item">
+    <a class="nav-link"[routerLink]=" ['./admin']">Admin </a>
   </li>
 
 
