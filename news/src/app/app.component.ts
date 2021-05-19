@@ -13,25 +13,11 @@ export class AppComponent {
 
   constructor(private http: HttpClient) {
 
-this.upload();
+
 
   }
 
-  upload() {
 
-  
-    const obj = {
-   
-      "uniqueID":34
-
-       
-          }
-
-    
-    this.http.post('http://localhost/scripts/singleRead.php',obj ).subscribe(x => {
-      console.log(x);
-    });
-  }
   onSelectFile(event:any) { // called each time file input changes
     let reader = new FileReader(); // HTML5 FileReader API
     let file = event.target.files[0];

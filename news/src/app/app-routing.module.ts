@@ -10,6 +10,11 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 
 const routes: Routes = [
 
+
+  {
+    path: "news/:uniqueID",
+    component: NewsContentComponent
+  },
   {
     path: "",
     pathMatch: 'full',
@@ -20,10 +25,7 @@ const routes: Routes = [
     path: "dashboard",
     component: DashboardComponent
   },
-  {
-    path: "news",
-    component: NewsContentComponent
-  },
+
   {
     path: "state",
     component: ComingSoonComponent
