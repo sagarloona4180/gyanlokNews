@@ -98,9 +98,28 @@
                     <div class="form-row">
                         <div class="name">Department</div>
                         <div class="value">
-                            <div class="input-group">
-                                <input formControlName="Deptt" class="input--style-6" type="text" name="Location" placeholder="News Author">
-                            </div>
+                            <div ngbDropdown >
+                                <button class="btn btn-outline-primary mr-2" id="dropdownManual"  ngbDropdownToggle>{{deptt ? deptt :'Select Department'}}</button>
+                                <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                                  <button ngbDropdownItem *ngFor="let item of  Department" (click)="changeDeptt(item)">{{item}}</button>
+                              
+                                </div>
+                              </div>
+                              
+                        </div>
+                    </div>
+
+
+                    <div class="form-row">
+                        <div class="name">Filter</div>
+                        <div class="value">
+                            <div ngbDropdown >
+                                <button class="btn btn-outline-primary mr-2" id="dropdownManual"  ngbDropdownToggle>{{filterApplied ? filterApplied :'Select Filter'}}</button>
+                                <div ngbDropdownMenu aria-labelledby="dropdownManual">
+                                    <button ngbDropdownItem *ngFor="let item of  Filter" (click)="changeFilter(item)">{{item}}</button>
+                                </div>
+                              </div>
+                              
                         </div>
                     </div>
                     
@@ -110,7 +129,7 @@
                             <div class="input-group js-input-file">
                                 <input class="input-file"   (change)="onSelectFile($event)" type="file" name="file_cv" id="file">
                                 <label class="label--file" for="file">Choose file</label>
-                                <span class="input-file__info">No file chosen</span>
+                                <span class="input-file__info">{{fileName}}</span>
                             </div>
                             <!-- <div class="label--desc">Upload your CV/Resume or any other relevant file. Max file size 50 MB</div> -->
                         </div>
@@ -118,7 +137,7 @@
                 </form>
             </div>
             <div class="card-footer">
-                <button class="btn btn--radius-2 btn--blue-2"  (click)="addNewnews()" [disabled]="!form.valid">Send Application</button>
+                <button class="btn btn--radius-2 btn--blue-2"  (click)="addNewnews()" [disabled]="!form.valid" >Send Application</button>
             </div>
         </div>
     </div>

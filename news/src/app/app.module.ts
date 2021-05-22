@@ -14,17 +14,30 @@ import { NewsContentComponent } from './components/new-post/news-content/news-co
 import { TopHeaderComponent } from './components/top-header/top-header.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TopNewsComponent } from './components/dashboard/top-news/top-news.component';
-import { StateNewsComponent } from './components/dashboard/state-news/state-news.component';
-import { SportsNewsComponent } from './components/dashboard/sports-news/sports-news.component';
-import { InternationalNewsComponent } from './components/dashboard/international-news/international-news.component';
-import { CountryNewsComponent } from './components/dashboard/country-news/country-news.component';
+import { WorldNewsComponent } from './components/dashboard/world-news/world-news.component';
+import { PopularNewsComponent } from './components/dashboard/popular-news/popular-news.component';
+
 import { MainHeadlineComponent } from './components/dashboard/main-headline/main-headline.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+import { ToastrModule } from 'ngx-toastr';
+import { TopHeadlinesComponent } from './components/dashboard/top-headlines/top-headlines.component';
+import { AdminPasswordComponent } from './components/admin-password/admin-password.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { EditorChoiceComponent } from './components/dashboard/editor-choice/editor-choice.component';
+import { SportsComponent } from './components/sports/sports.component';
+import { CountryComponent } from './components/country/country.component';
+import { InternationalComponent } from './components/international/international.component';
+import { BusinessComponent } from './components/business/business.component';
+import { ArtComponent } from './components/art/art.component';
+import { EducationComponent } from './components/education/education.component';
+import { LearningComponent } from './components/learning/learning.component';
 
 
 
@@ -43,25 +56,41 @@ import { ReactiveFormsModule } from '@angular/forms';
     ContentShareComponent,
     DashboardComponent,
     TopNewsComponent,
-    StateNewsComponent,
-    SportsNewsComponent,
-    InternationalNewsComponent,
-    CountryNewsComponent,
+     WorldNewsComponent,
+     PopularNewsComponent,
+
     MainHeadlineComponent,
     PageNotFoundComponent,
     ComingSoonComponent,
-    AdminComponent
-  
+    AdminComponent,
+    TopHeadlinesComponent,
+    AdminPasswordComponent,
+    EditorChoiceComponent,
+    SportsComponent,
+    CountryComponent,
+    InternationalComponent,
+    BusinessComponent,
+    ArtComponent,
+    EducationComponent,
+    LearningComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgbModule,
-    HttpClientModule ,
-    ReactiveFormsModule
-    
+    NgbModule, BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+
+      timeOut: 30000,
+      maxOpened: 1,
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+      toastClass: 'toast toast-bootstrap-compatibility-fix'
+    })
   ],
-  providers: [],
+  providers: [  {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

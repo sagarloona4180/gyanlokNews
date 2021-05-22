@@ -1,0 +1,76 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="text-center">
+          <h1 class="text-center mt-5">
+            World
+          </h1>
+          <p class="text-secondary fs-15">
+            This text can be added in the category Description field in
+            dashboard
+          </p>
+        </div>
+        <h5 class="text-muted font-weight-medium mb-3">World News</h5>
+      </div>
+    </div>
+    <div class="row" *ngIf="mainNews && mainNews.length">
+        <div class="col-lg-6  mb-5 mb-sm-2">
+          <div class="position-relative image-hover">
+            <img
+            src="{{mainNews[0].Images}}"
+              class="img-fluid"
+              alt="world-news"
+            />
+            <span class="thumb-title">{{mainNews[0].Deptt}}</span>
+          </div>
+          <h1 class="font-weight-600 mt-3">
+            {{mainNews[0].Title}}
+          </h1>
+          <p class="fs-15 font-weight-normal">
+            {{mainNews[0].Description}}
+          </p>
+        </div>
+        <div class="col-lg-6  mb-5 mb-sm-2">
+          <div class="row">
+            <div class="col-sm-6  mb-5 mb-sm-2" *ngFor="let item of mainNews">
+              <div class="position-relative image-hover">
+                <img
+                [src]="item.Images"
+                  class="img-fluid"
+                  alt="world-news"
+                />
+                <span class="thumb-title">POLITICS</span>
+              </div>
+              <h5 class="font-weight-600 mt-3">
+               {{item.Title}}
+              </h5>
+              
+            </div>
+            
+          </div>
+        
+        </div>
+      </div>
+    <div class="row mt-5">
+      <div class="col-sm-12">
+        <h5 class="text-muted font-weight-medium mb-3">Popular News</h5>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col-sm-3  mb-5 mb-sm-2"  *ngFor="let news of mainNews">
+        <div class="position-relative image-hover">
+          <img
+          [src]="news.Images"
+            class="img-fluid"
+            alt="world-news"
+          />
+          <span class="thumb-title">{{news.Deptt}}</span>
+        </div>
+        <h5 class="font-weight-600 mt-3">
+          {{news.Title}}
+        </h5>
+      </div>
+   
+    </div>
+  
+  </div>

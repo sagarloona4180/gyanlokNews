@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, Input, OnInit, ViewContainerRef } from '@angular/core';
 import { Subject } from 'rxjs';
+import { AdminPasswordComponent } from '../admin-password/admin-password.component';
 
 @Component({
   selector: 'app-menu-bar',
@@ -9,7 +10,7 @@ import { Subject } from 'rxjs';
 export class MenuBarComponent implements OnInit {
   @Input() navbarSuject: Subject<boolean> = new Subject();
   navbarStatus: boolean =false;;
-  constructor() { }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver,  private viewContainerRef: ViewContainerRef){}
 
   ngOnInit(): void {
  this.navbarSuject.subscribe(x=>{
@@ -27,4 +28,18 @@ export class MenuBarComponent implements OnInit {
     this.navbarSuject.next(true);
   }
 
+
+  checkAdminPasswoed(){
+       const rs:any = this.viewContainerRef.createComponent(this.componentFactoryResolver.resolveComponentFactory(AdminPasswordComponent));
+    
+
+        //  rs.instance.emitModal.subscribe(
+        //    (data:any) => {
+ 
+        //      this.viewContainerRef.clear();
+        //      return true;
+ 
+        //    }
+        //  );
+  }
 }

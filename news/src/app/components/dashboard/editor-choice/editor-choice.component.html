@@ -1,0 +1,31 @@
+   <div class="editors-news">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="d-flex position-relative float-left">
+          <h3 class="section-title">Editor choice</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="row">
+          <div class="col-sm-4  mb-5 mb-sm-2" *ngFor="let news of mainNews">
+            <div class="position-relative image-hover">
+              <img
+              [src]="news.Images"
+                class="img-fluid"
+                alt="world-news"
+              />
+              <span class="thumb-title">{{news.Deptt}}</span>
+            </div>
+            <h5 class="font-weight-600 mt-3">
+              {{news.Title}}
+            </h5>
+          </div>
+         
+        </div>
+    
+      </div>
+     
+    </div>
+  </div>

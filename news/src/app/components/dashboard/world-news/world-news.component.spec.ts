@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SportsNewsComponent } from './sports-news.component';
+import { StateNewsComponent } from './world-news.component';
 
-describe('SportsNewsComponent', () => {
-  let component: SportsNewsComponent;
-  let fixture: ComponentFixture<SportsNewsComponent>;
+describe('StateNewsComponent', () => {
+  let component: StateNewsComponent;
+  let fixture: ComponentFixture<StateNewsComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SportsNewsComponent ]
+      declarations: [ StateNewsComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SportsNewsComponent);
+    fixture = TestBed.createComponent(StateNewsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { URLs } from 'src/app/common/constant/constant';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-admin',
@@ -34,12 +35,22 @@ url =URLs.getAPIUrl()+'createnews.php';
 
     Author: new FormControl('', [Validators.required]),
 
-    Deptt: new FormControl('', [Validators.required])
+    Deptt: new FormControl('', [Validators.required]),
+
+    Filter: new FormControl('', [Validators.required])
 
   });
   public imagePath: any;
+  deptt:string ='';
+  filterApplied ='';
+  fileName='No File Selected';
 
-  constructor(private http:HttpClient) { }
+  Filter=["C","T","H","N"];
+  Department= ["Health","Policts","Country","State","District","Sports","Education","Art","Business","Internation"];
+
+
+
+  constructor(private http:HttpClient,private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
@@ -48,6 +59,7 @@ url =URLs.getAPIUrl()+'createnews.php';
   onSelectFile(event: any) { // called each time file input changes
     let reader = new FileReader(); // HTML5 FileReader API
     let file = event.target.files[0];
+    this.fileName = file.name;
     if (event.target.files && event.target.files[0]) {
       reader.readAsDataURL(file);
 
@@ -65,14 +77,27 @@ url =URLs.getAPIUrl()+'createnews.php';
 
 
   addNewnews() {
+
+    this.form.controls['Deptt'].setValue( this.deptt);
+    this.form.controls['Filter'].setValue( this.filterApplied);
     const obj = this.form.value;
     obj.images = this.imagePath;
-
+   
     this.http.post(this.url,obj ).subscribe(x => {
-      console.log(x);
+      this.toastr.success('New News Added');
       this.form.reset();
+    this.filterApplied = '';
+    this.deptt = '';
       this.imagePath =null;
     });
   }
+  changeFilter(v:string){
+    this.filterApplied = v;
+    this.form.controls['Filter'].setValue( this.filterApplied);
+  }
 
+  changeDeptt(v:string){
+    this.deptt =v;
+    this.form.controls['Deptt'].setValue( this.deptt);
+  }
 }

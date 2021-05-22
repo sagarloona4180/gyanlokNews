@@ -39,4 +39,11 @@ latestNews :any[] = [];
       
     });
   }
+
+
+  gotoNews(n:any){
+
+    this.Route.navigate(['./news',n.uniqueID]);
+  }
+
 }

@@ -14,14 +14,12 @@ id="navbarSupportedContent"
     <a class="nav-link active"  [routerLink]=" ['./dashboard']"
     routerLinkActive="active">Home</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link"     [routerLink]=" ['./state']">State</a>
-  </li>
+
   <li class="nav-item">
     <a class="nav-link"  [routerLink]=" ['./country']">Country</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" [routerLink]=" ['./international']" >Internation</a>
+    <a class="nav-link" [routerLink]=" ['./international']" >International</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" [routerLink]=" ['./business']" >Business</a>
@@ -51,9 +49,9 @@ id="navbarSupportedContent"
     </div>
   </li>
 
-  <!-- <li class="nav-item">
-    <a class="nav-link"[routerLink]=" ['./admin']">Admin </a>
-  </li> -->
+  <li class="nav-item">
+    <a class="nav-link" (click)="checkAdminPasswoed()">Admin </a>
+  </li>
 
 
 </ul>

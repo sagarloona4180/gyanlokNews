@@ -1,53 +1,83 @@
 <div class="row">
-    <div class="col-lg-8">
-     
-   
-    
-        <ngb-carousel  [showNavigationIndicators]="false" *ngIf="mainNews">
-          <ng-container *ngFor="let news of mainNews">
-            <ng-template ngbSlide>
-              <div class="picsum-img-wrapper">
-                <img [src]="news.Images" alt="Random first slide">
-              </div>
-              <div class="carousel-caption">
-                <h3>{{ news.Title}}</h3>
-               
-  
-                <p class="text-color m-0 pt-2 d-flex align-items-center">
-                  <span class="fs-10 mr-1">{{news.Date}}</span>
-                  <i class="mdi mdi-bookmark-outline mr-3"></i>
-                  <span class="fs-10 mr-1">{{news.Author}}</span>
-                  <i class="mdi mdi-comment-outline"></i>
-                </p>
-              </div>
-            </ng-template>
-          </ng-container>
-       
-       
-        </ngb-carousel>
-        
-    
-    
-    </div>
-    <div class="col-lg-4">
-      <div class="row" *ngFor="let news of latestNews">
-        <div class="col-sm-6">
-          <div class="py-3 border-bottom">
-            <div class="d-flex align-items-center pb-2">
-              <!-- <img
-              src="{{news.Images}}"
-                class="img-xs img-rounded mr-2"
-                alt="thumb"
-              /> -->
-              <!-- <span class="fs-12 text-muted">Henry Itondo</span> -->
-            </div>
-            <p class="fs-14 m-0 font-weight-medium line-height-sm">
-             {{news.Title}}
+  <div class="col-lg-8">
+
+
+
+    <ngb-carousel [showNavigationIndicators]="false" *ngIf="mainNews">
+      <ng-container *ngFor="let news of mainNews">
+        <ng-template ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="news.Images" alt="Random first slide">
+          </div>
+          <div class="carousel-caption">
+            <h3>{{ news.Title}}</h3>
+
+
+            <p class="text-color m-0 pt-2 d-flex align-items-center">
+              <span class="fs-10 mr-1">{{news.Date}}</span>
+              <i class="mdi mdi-bookmark-outline mr-3"></i>
+              <span class="fs-10 mr-1">{{news.Author}}</span>
+              <i class="mdi mdi-comment-outline"></i>
             </p>
           </div>
+        </ng-template>
+      </ng-container>
+
+
+    </ngb-carousel>
+
+
+
+  </div>
+  <!-- <div class="col-lg-4">
+    <div class="td-block-title-wrap">
+      <h4 class="block-title td-block-title">
+        <span class="td-pulldown-size">Latest News Update</span>
+      </h4>
+    </div>
+    <div class="row news-row"  (click) ="gotoNews(news)"  *ngFor="let news of latestNews | slice :0:6" >
+      <div class="col-sm-12">
+        <div class="py-3 border-bottom">
+          <div class="d-flex align-items-center pb-2">
+         
+          </div>
+          <p class="fs-14 m-0 font-weight-medium line-height-sm">
+            {{news.Title}}
+          </p>
         </div>
-       
       </div>
+
+    </div>
+
+  </div> -->
+
+
+  <div class="col-lg-3">
+    <div class="position-relative mb-3">
     
     </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="d-flex position-relative float-left">
+          <h3 class="section-title">Latest News</h3>
+        </div>
+      </div>
+      <div class="col-sm-12" *ngFor="let news of latestNews | slice :0:6" >
+        <div class="border-bottom pb-3">
+          <h5 class="font-weight-600 mt-0 mb-0">
+            {{news.Title}}
+          </h5>
+          <p class="text-color m-0 d-flex align-items-center">
+            <span class="fs-10 mr-1">{{news.Date}}</span>
+            <i class="mdi mdi-bookmark-outline mr-3"></i>
+          
+          </p>
+        </div>
+      </div>
+     
+    </div>
   </div>
+
+
+
+</div>

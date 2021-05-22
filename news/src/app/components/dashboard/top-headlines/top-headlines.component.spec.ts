@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InternationalNewsComponent } from './international-news.component';
+import { TopHeadlinesComponent } from './top-headlines.component';
 
-describe('InternationalNewsComponent', () => {
-  let component: InternationalNewsComponent;
-  let fixture: ComponentFixture<InternationalNewsComponent>;
+describe('TopHeadlinesComponent', () => {
+  let component: TopHeadlinesComponent;
+  let fixture: ComponentFixture<TopHeadlinesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ InternationalNewsComponent ]
+      declarations: [ TopHeadlinesComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InternationalNewsComponent);
+    fixture = TestBed.createComponent(TopHeadlinesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

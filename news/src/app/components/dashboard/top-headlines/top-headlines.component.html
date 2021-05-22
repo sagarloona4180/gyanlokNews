@@ -1,0 +1,39 @@
+<div class="world-news">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="d-flex position-relative  float-left">
+          <h3 class="section-title">Today Stories</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2" *ngFor="let stories of topNewsList | slice :0:4">
+        <div class="position-relative image-hover">
+          <img
+          src="{{stories.Images}}"
+            class="img-fluid"
+            alt="world-news"
+          />
+          <span class="thumb-title">{{stories.Deptt}}</span>
+        </div>
+        <h5 class="font-weight-bold mt-3">
+            {{stories.Title}}
+        </h5>
+        <p class="fs-15 font-weight-normal">
+          {{stories.Description.substring(0,80)}}
+        </p>
+        <a (click) ="gotoNews(stories)"   class="font-weight-bold text-dark pt-2"
+          >Read Article</a
+        >
+      </div>
+    
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="d-flex position-relative cursor float-right">
+            <h3 class="section-title">More</h3>
+          </div>
+        </div>
+      </div>
+  </div>

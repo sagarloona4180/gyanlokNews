@@ -1,15 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 import { URLs } from 'src/app/common/constant/constant';
 
 @Component({
-  selector: 'app-top-news',
-  templateUrl: './top-news.component.html',
-  styleUrls: ['./top-news.component.scss']
+  selector: 'app-top-headlines',
+  templateUrl: './top-headlines.component.html',
+  styleUrls: ['./top-headlines.component.scss']
 })
-export class TopNewsComponent implements OnInit {
+export class TopHeadlinesComponent implements OnInit {
 
   topNewsList:any[] = [];
   url=URLs.getAPIUrl() +'read.php';
@@ -21,8 +20,8 @@ export class TopNewsComponent implements OnInit {
       x.body.forEach((e:any) => {
          e.Images = URLs.getAPIUrl() + e.Images;
       });
-      x.body=  x.body.filter((e:any)=> e.Filter ==='T');
-      console.log(x.body);
+
+      console.log(x.body);  x.body=  x.body.filter((e:any)=> e.Filter ==='H');
       this.topNewsList = x.body;
       
     })

@@ -1,10 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminComponent } from './components/admin/admin.component';
+import { ArtComponent } from './components/art/art.component';
+import { BusinessComponent } from './components/business/business.component';
 import { ComingSoonComponent } from './components/coming-soon/coming-soon.component';
+import { CountryComponent } from './components/country/country.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { EducationComponent } from './components/education/education.component';
+import { InternationalComponent } from './components/international/international.component';
+import { LearningComponent } from './components/learning/learning.component';
 import { NewsContentComponent } from './components/new-post/news-content/news-content.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SportsComponent } from './components/sports/sports.component';
+import { AdminGuard } from './guard/admin.guard';
 
 
 
@@ -21,10 +29,10 @@ const routes: Routes = [
     redirectTo: 'dashboard'
   },
 
-  {
-    path: "dashboard",
-    component: DashboardComponent
-  },
+  // {
+  //   path: "dashboard",
+  //   component: DashboardComponent
+  // },
 
   {
     path: "state",
@@ -33,23 +41,23 @@ const routes: Routes = [
 
   {
     path: "country",
-    component: ComingSoonComponent
+    component: CountryComponent
   },
   {
     path: "international",
-    component: ComingSoonComponent
+    component: InternationalComponent
   },
   {
     path: "business",
-    component: ComingSoonComponent
+    component: BusinessComponent
   },
   {
-    path: "sports",
-    component: ComingSoonComponent
+    path: "sport",
+    component: SportsComponent
   },
   {
     path: "art",
-    component: ComingSoonComponent
+    component: ArtComponent
   },
 
   {
@@ -58,16 +66,17 @@ const routes: Routes = [
   },
   {
     path: "education",
-    component: ComingSoonComponent
+    component: EducationComponent
   },
   {
     path: "learning",
-    component: ComingSoonComponent
+    component: LearningComponent
   },
 
   {
     path: "admin",
-    component: AdminComponent
+    component: AdminComponent,
+    //canActivate: [AdminGuard]
   },
 
     
