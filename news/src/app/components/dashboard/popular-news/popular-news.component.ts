@@ -10,7 +10,7 @@ import { URLs } from 'src/app/common/constant/constant';
 })
 export class PopularNewsComponent implements OnInit {
 
-  mainNews:any = [];
+  popularrNews:any = [];
 
   
   
@@ -27,7 +27,7 @@ export class PopularNewsComponent implements OnInit {
         x.body.forEach((e:any,index:number) => {
           if(index <4){
             e.Images = URLs.getAPIUrl() + e.Images;
-            this.mainNews.push(e);
+            this.popularrNews.push(e);
           }
           
         });

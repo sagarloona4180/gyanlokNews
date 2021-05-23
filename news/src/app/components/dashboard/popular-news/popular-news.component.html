@@ -1,4 +1,4 @@
-<div class="popular-news">
+<div class="popular-news" *ngIf="popularrNews && popularrNews.length">
     <div class="row">
       <div class="col-lg-3">
         <div class="d-flex position-relative float-left">
@@ -6,26 +6,26 @@
         </div>
       </div>
     </div>
-    <div class="row" *ngIf="mainNews && mainNews.length">
+    <div class="row" *ngIf="popularrNews && popularrNews.length">
       <div class="col-lg-6  mb-5 mb-sm-2">
         <div class="position-relative image-hover">
           <img
-          src="{{mainNews[0].Images}}"
+          src="{{popularrNews[0].Images}}"
             class="img-fluid"
             alt="world-news"
           />
-          <span class="thumb-title">{{mainNews[0].Deptt}}</span>
+          <span class="thumb-title">{{popularrNews[0].Deptt}}</span>
         </div>
-        <h1 class="font-weight-600 mt-3" (click)="gotoNews(mainNews[0])" > 
-          {{mainNews[0].Title}}
+        <h1 class="font-weight-600 mt-3" (click)="gotoNews(popularrNews[0])" > 
+          {{popularrNews[0].Title}}
         </h1>
         <p class="fs-15 font-weight-normal">
-          {{mainNews[0].Description}}
+          {{popularrNews[0].Description}}
         </p>
       </div>
       <div class="col-lg-6  mb-5 mb-sm-2">
         <div class="row">
-          <div class="col-sm-6  mb-5 mb-sm-2"  (click)="gotoNews(item)" *ngFor="let item of mainNews">
+          <div class="col-sm-6  mb-5 mb-sm-2"  (click)="gotoNews(item)" *ngFor="let item of popularrNews">
             <div class="position-relative image-hover">
               <img
               [src]="item.Images"

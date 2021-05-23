@@ -1,4 +1,4 @@
-   <div class="editors-news">
+   <div class="editors-news" *ngIf="editorNews && editorNews.length ">
     <div class="row">
       <div class="col-lg-3">
         <div class="d-flex position-relative float-left">
@@ -6,10 +6,10 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row"  *ngIf="editorNews && editorNews.length ">
       <div class="col-lg-12">
         <div class="row">
-          <div class="col-sm-4  mb-5 mb-sm-2" *ngFor="let news of mainNews">
+          <div class="col-sm-4  mb-5 mb-sm-2" *ngFor="let news of editorNews">
             <div class="position-relative image-hover">
               <img
               [src]="news.Images"

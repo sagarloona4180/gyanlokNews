@@ -1,4 +1,4 @@
-<div class="banner-top-thumb-wrap">
+<div class="banner-top-thumb-wrap" *ngIf="topNewsList && topNewsList.length">
   <div class="d-lg-flex justify-content-between align-items-center">
     <div   (click) ="gotoNews(news)" class="d-flex  top-news justify-content-between mb-3 mb-lg-0" *ngFor="let news of topNewsList | slice :0:4">
       <div>

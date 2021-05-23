@@ -10,7 +10,7 @@ import { URLs } from 'src/app/common/constant/constant';
 })
 export class EditorChoiceComponent implements OnInit {
 
-  mainNews: any = [];
+  editorNews: any = [];
 
 
 
@@ -37,9 +37,9 @@ export class EditorChoiceComponent implements OnInit {
       x.body = x.body.filter((e: any) => e.Filter === 'E');
 
 
-      this.mainNews = x.body;
+      this.editorNews = x.body;
 
-      console.log('editor', this.mainNews);
+      console.log('editor', this.editorNews);
 
 
 

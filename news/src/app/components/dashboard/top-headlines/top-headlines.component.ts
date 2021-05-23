@@ -10,7 +10,7 @@ import { URLs } from 'src/app/common/constant/constant';
 })
 export class TopHeadlinesComponent implements OnInit {
 
-  topNewsList:any[] = [];
+  todayNews:any[] = [];
   url=URLs.getAPIUrl() +'read.php';
   constructor(private Route:Router,private http:HttpClient) { }
 
@@ -22,7 +22,7 @@ export class TopHeadlinesComponent implements OnInit {
       });
 
       console.log(x.body);  x.body=  x.body.filter((e:any)=> e.Filter ==='H');
-      this.topNewsList = x.body;
+      this.todayNews = x.body;
       
     })
   }
