@@ -10,35 +10,47 @@ import { URLs } from 'src/app/common/constant/constant';
 })
 export class EditorChoiceComponent implements OnInit {
 
-  mainNews:any = [];
+  mainNews: any = [];
 
-  
-  
-  
-  
-  
-  
-  url=URLs.getAPIUrl() +'read.php';
-  constructor(private Route:Router,private http:HttpClient) { }
+
+
+
+
+
+
+  url = URLs.getAPIUrl() + 'read.php';
+  constructor(private Route: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get(this.url).subscribe((x:any)=>{
-    
-      x.body.forEach((e:any,index:number) => {
-        if(index <8){
-          e.Images = URLs.getAPIUrl() + e.Images;
-          this.mainNews.push(e);
-        }
-        
+    this.http.get(this.url).subscribe((x: any) => {
+
+      x.body.forEach((e: any, index: number) => {
+
+        e.Images = URLs.getAPIUrl() + e.Images;
+
+
+
       });
 
- 
-     
 
-  
- 
-      
+
+      x.body = x.body.filter((e: any) => e.Filter === 'E');
+
+
+      this.mainNews = x.body;
+
+      console.log('editor', this.mainNews);
+
+
+
+
+
+
+
     });
+  } gotoNews(n: any) {
+
+    this.Route.navigate(['./news', n.uniqueID]);
   }
 
 }

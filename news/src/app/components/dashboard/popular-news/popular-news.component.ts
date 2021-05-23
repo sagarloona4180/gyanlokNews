@@ -40,5 +40,9 @@ export class PopularNewsComponent implements OnInit {
         
       });
     }
+    gotoNews(n:any){
 
+      this.Route.navigate(['./news',n.uniqueID]);
+    }
+  
 }

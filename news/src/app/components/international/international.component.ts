@@ -28,15 +28,20 @@ export class InternationalComponent implements OnInit {
       x.body.forEach((e:any,index:number) => {
       
           e.Images = URLs.getAPIUrl() + e.Images;
-          this.mainNews.push(e);
-   
+       
         
       });
 
  
      
 
-  
+      x.body=  x.body.filter((e:any)=> e.Country.toLowerCase() !=='india');
+
+      
+      this.mainNews =x.body;
+
+      console.log('Sports', this.mainNews);
+ 
  
       
     });

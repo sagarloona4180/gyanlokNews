@@ -27,10 +27,10 @@ export class BusinessComponent implements OnInit {
     
       x.body.forEach((e:any,index:number) => {
       
+         
           e.Images = URLs.getAPIUrl() + e.Images;
-          this.mainNews.push(e);
-   
         
+  
       });
 
  
@@ -38,6 +38,12 @@ export class BusinessComponent implements OnInit {
 
   
  
+      x.body=  x.body.filter((e:any)=> e.Deptt ==='Business');
+
+      
+      this.mainNews =x.body;
+
+      console.log('Business', this.mainNews);
       
     });
   }

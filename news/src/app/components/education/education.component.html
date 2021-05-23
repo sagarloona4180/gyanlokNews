@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" >
     <div class="row">
       <div class="col-sm-12">
         <div class="text-center">
@@ -10,7 +10,7 @@
             dashboard
           </p>
         </div>
-        <h5 class="text-muted font-weight-medium mb-3">World News</h5>
+        <h5 class="text-muted font-weight-medium mb-3">Education News</h5>
       </div>
     </div>
     <div class="row" *ngIf="mainNews && mainNews.length">
@@ -51,12 +51,12 @@
         
         </div>
       </div>
-    <div class="row mt-5">
+    <div class="row mt-5" *ngIf="mainNews && mainNews.length">
       <div class="col-sm-12">
         <h5 class="text-muted font-weight-medium mb-3">Popular News</h5>
       </div>
     </div>
-    <div class="row mb-4">
+    <div class="row mb-4" *ngIf="mainNews && mainNews.length">
       <div class="col-sm-3  mb-5 mb-sm-2"  *ngFor="let news of mainNews">
         <div class="position-relative image-hover">
           <img

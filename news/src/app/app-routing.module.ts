@@ -29,15 +29,15 @@ const routes: Routes = [
     redirectTo: 'dashboard'
   },
 
-  // {
-  //   path: "dashboard",
-  //   component: DashboardComponent
-  // },
-
   {
-    path: "state",
-    component: ComingSoonComponent
+    path: "dashboard",
+    component: DashboardComponent
   },
+
+  // {
+  //   path: "state",
+  //   component: ComingSoonComponent
+  // },
 
   {
     path: "country",

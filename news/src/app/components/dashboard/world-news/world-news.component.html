@@ -1,4 +1,4 @@
-<div class="world-news">
+<div class="world-news" *ngIf="mainNews && mainNews.length">
     <div class="row">
       <div class="col-sm-12">
         <div class="d-flex position-relative  float-left">
@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2" *ngFor="let item of mainNews">
+      <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2"  *ngFor="let item of mainNews">
         <div class="position-relative image-hover">
           <img
           [src]="item.Images"
@@ -16,7 +16,7 @@
           />
           <span class="thumb-title">{{item.Deptt}}</span>
         </div>
-        <h5 class="font-weight-bold mt-3">
+        <h5 class="font-weight-bold mt-3" (click)="gotoNews(item)">
         {{item.Title}}
         </h5>
       

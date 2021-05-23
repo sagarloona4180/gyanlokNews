@@ -25,10 +25,10 @@ export class WorldNewsComponent implements OnInit {
     this.http.get(this.url).subscribe((x:any)=>{
     
       x.body.forEach((e:any,index:number) => {
-        if(index <4){
+       
           e.Images = URLs.getAPIUrl() + e.Images;
           this.mainNews.push(e);
-        }
+        
         
       });
 
@@ -37,8 +37,18 @@ export class WorldNewsComponent implements OnInit {
 
   
  
+      x.body=  x.body.filter((e:any)=> e.Country.toLowerCase()  !=='india');
+
+      
+      this.mainNews =x.body;
+
+      console.log('world', this.mainNews);
       
     });
+  }
+  gotoNews(n:any){
+
+    this.Route.navigate(['./news',n.uniqueID]);
   }
 
 }

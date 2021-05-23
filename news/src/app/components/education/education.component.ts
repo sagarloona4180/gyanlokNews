@@ -35,7 +35,12 @@ export class EducationComponent implements OnInit {
  
      
 
-  
+      x.body=  x.body.filter((e:any)=> e.Deptt ==='Education');
+
+      
+      this.mainNews =x.body;
+
+      console.log('Sports', this.mainNews);
  
       
     });

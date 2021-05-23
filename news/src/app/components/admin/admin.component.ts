@@ -45,7 +45,7 @@ url =URLs.getAPIUrl()+'createnews.php';
   filterApplied ='';
   fileName='No File Selected';
 
-  Filter=["C","T","H","N"];
+  Filter=["C","T","H","E","P"];
   Department= ["Health","Policts","Country","State","District","Sports","Education","Art","Business","Internation"];
 
 
@@ -86,9 +86,10 @@ url =URLs.getAPIUrl()+'createnews.php';
     this.http.post(this.url,obj ).subscribe(x => {
       this.toastr.success('New News Added');
       this.form.reset();
-    this.filterApplied = '';
-    this.deptt = '';
+       this.filterApplied = '';
+       this.deptt = '';
       this.imagePath =null;
+      this.fileName ='';
     });
   }
   changeFilter(v:string){
