@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +12,24 @@ export class AppComponent {
 
 
 
-  constructor(private http: HttpClient) {
+  private previousUrl: string ='';
+  private currentUrl: string;
 
+  constructor(private router: Router) {
+    this.currentUrl = this.router.url;
+    router.events.subscribe(event => {
+      if (event instanceof NavigationEnd) {        
+        this.previousUrl = this.currentUrl;
+        this.currentUrl = event.url;
 
-
+        console.log(this.previousUrl ,this.previousUrl);
+      };
+    });
   }
 
+  public getPreviousUrl() {
+    return this.previousUrl;
+  }    
 
   
 }

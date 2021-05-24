@@ -1,22 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap.scss";
 
-@import '~ngx-toastr/toastr';
+@import "~ngx-toastr/toastr";
 
-@import '~bootstrap/scss/functions';
-@import '~bootstrap/scss/variables';
-
-
-
-
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
 
 /*-------------------------------------------------------------------*/
-
 
 /*-------------------------------------------------------------------*/
 /* === Import template variables === */
 @import "./assets/scss/variables";
-
 
 /* === Core Styles === */
 @import "./assets/scss/cards";
@@ -33,5 +27,6 @@
 @import "./assets/scss/error";
 @import "./assets/scss/media-queries";
 
-
-
+.cursor {
+    cursor: pointer;
+}

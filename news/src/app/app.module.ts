@@ -38,6 +38,9 @@ import { BusinessComponent } from './components/business/business.component';
 import { ArtComponent } from './components/art/art.component';
 import { EducationComponent } from './components/education/education.component';
 import { LearningComponent } from './components/learning/learning.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { SubscribeUsComponent } from './components/subscribe-us/subscribe-us.component';
+import { EmailUsComponent } from './components/email-us/email-us.component';
 
 
 
@@ -72,7 +75,10 @@ import { LearningComponent } from './components/learning/learning.component';
     BusinessComponent,
     ArtComponent,
     EducationComponent,
-    LearningComponent
+    LearningComponent,
+    AboutUsComponent,
+    SubscribeUsComponent,
+    EmailUsComponent
 
   ],
   imports: [
