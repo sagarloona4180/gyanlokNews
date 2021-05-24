@@ -32,6 +32,9 @@
   .two{
     top:500px;
     background:#000;
+    &.on{
+      top:unset
+    }
   }
   
   .two h3{
@@ -169,4 +172,10 @@
     background:#fff;
     -webkit-transform:rotate(-45deg);
     transform:rotate(-45deg);
+  }
+
+
+  .error{
+    color: red;
+    display: block;
   }

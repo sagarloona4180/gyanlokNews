@@ -19,7 +19,7 @@
 
 .contact-us h3,
 p {
-    color: #fff
+    color: #000;
 }
 
 .address {
@@ -82,3 +82,14 @@ p {
 .form-control {
     padding: .375rem .25rem
 }
+
+
+
+.error{
+    color: red;
+    display: block;
+  }
+
+  label{
+      font-weight: 700;
+  }
