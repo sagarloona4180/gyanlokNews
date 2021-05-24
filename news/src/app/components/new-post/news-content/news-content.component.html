@@ -1,9 +1,11 @@
 
-
+<div class="spinner-border"  *ngIf="loader"  role="status">
+   <span class="sr-only">Loading...</span>
+ </div>
 
 <div class="container">
    <div class="row">
-      <div class="col-sm-12">
+      <div class="col-sm-8">
          <div class="news-post-wrapper">
 
             <app-content-title [newsInfo]="newsInfo"></app-content-title>
@@ -12,7 +14,16 @@
          </div>
 
       </div>
+      <div class="col-sm-4">
 
+
+
+
+
+      </div>
+
+
+     
    </div>
 
 </div>

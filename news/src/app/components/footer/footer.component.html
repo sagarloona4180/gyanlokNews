@@ -55,17 +55,17 @@
             <!-- Links -->
            
             <p>
-              <a href="#!" class="text-reset">Home</a>
+              <a  [routerLink]=" ['./dashboard']"
+              routerLinkActive="active" class="text-reset">Home</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">About Us</a>
+              <a  class="text-reset"  [routerLink]=" ['./Aboutus']"
+              routerLinkActive="active">About Us</a>
             </p>
-            <p>
-              <a href="#!" class="text-reset">Oponion</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Suggestion</a>
-            </p>
+           
+            <!-- <p>
+              <a  class="text-reset">Suggestion</a>
+            </p> -->
           </div>
           <!-- Grid column -->
   
@@ -74,17 +74,19 @@
             <!-- Links -->
            
             <p>
-              <a href="#!" class="text-reset">Send Mail </a>
+              <a  class="text-reset" [routerLink]=" ['./emailUs']"
+              routerLinkActive="active">Send Mail </a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Subscribe Us</a>
+              <a  class="text-reset" [routerLink]=" ['./subscribeUs']"
+              routerLinkActive="active">Subscribe Us</a>
+            </p>
+            <!-- <p>
+              <a  class="text-reset">Weather</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">Weather</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Refund ploicy</a>
-            </p>
+              <a  class="text-reset">Refund ploicy</a>
+            </p> -->
           </div>
           <!-- Grid column -->
   
@@ -101,7 +103,7 @@
               <i class="fas fa-envelope me-3"></i>
               gyanlok247@gmail.com
             </p>
-            <p><i class="fas fa-phone me-3"></i> 7298264180</p>
+            <p><i class="fas fa-phone me-3"></i> 7006397712</p>
             <!-- <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p> -->
           </div>
           <!-- Grid column -->

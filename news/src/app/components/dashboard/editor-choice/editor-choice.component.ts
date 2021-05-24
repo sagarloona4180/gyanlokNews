@@ -50,7 +50,7 @@ export class EditorChoiceComponent implements OnInit {
     });
   } gotoNews(n: any) {
 
-    this.Route.navigate(['./news', n.uniqueID]);
+    this.Route.navigate(['./news', btoa(n.uniqueID)]);
   }
 
 }

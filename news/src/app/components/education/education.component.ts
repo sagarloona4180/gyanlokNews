@@ -45,5 +45,8 @@ export class EducationComponent implements OnInit {
       
     });
   }
+  gotoNews(n:any){
 
+    this.Route.navigate(['./news',btoa(n.uniqueID)]);
+  }
 }

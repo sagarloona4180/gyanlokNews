@@ -9,7 +9,7 @@
           <div class="picsum-img-wrapper">
             <img [src]="news.Images" alt="Random first slide">
           </div>
-          <div class="carousel-caption">
+          <div class="carousel-caption cursor">
             <h3>{{ news.Title}}</h3>
 
 
@@ -64,7 +64,7 @@
       </div>
       <div class="col-sm-12" *ngFor="let news of latestNews | slice :0:6" >
         <div class="border-bottom pb-3">
-          <h5 class="font-weight-600 mt-0 mb-0">
+          <h5 class="font-weight-600 mt-0 mb-0 cursor">
             {{news.Title}}
           </h5>
           <p class="text-color m-0 d-flex align-items-center">

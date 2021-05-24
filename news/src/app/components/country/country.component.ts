@@ -35,7 +35,7 @@ export class CountryComponent implements OnInit {
 
  
      
-      x.body=  x.body.filter((e:any)=> e.Country.toLowerCase() ==='india');
+      x.body=  x.body.filter((e:any)=> e.Country.toLowerCase() ==='india' &&   e.Deptt ==='State');
 
       
       this.mainNews =x.body;
@@ -46,5 +46,8 @@ export class CountryComponent implements OnInit {
       
     });
   }
+  gotoNews(n:any){
 
+    this.Route.navigate(['./news',btoa(n.uniqueID)]);
+  }
 }

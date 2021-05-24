@@ -16,7 +16,7 @@
           />
           <span class="thumb-title">{{popularrNews[0].Deptt}}</span>
         </div>
-        <h1 class="font-weight-600 mt-3" (click)="gotoNews(popularrNews[0])" > 
+        <h1 class="font-weight-600 mt-3 cursor" (click)="gotoNews(popularrNews[0])" > 
           {{popularrNews[0].Title}}
         </h1>
         <p class="fs-15 font-weight-normal">
@@ -25,20 +25,26 @@
       </div>
       <div class="col-lg-6  mb-5 mb-sm-2">
         <div class="row">
-          <div class="col-sm-6  mb-5 mb-sm-2"  (click)="gotoNews(item)" *ngFor="let item of popularrNews">
-            <div class="position-relative image-hover">
-              <img
-              [src]="item.Images"
-                class="img-fluid"
-                alt="world-news"
-              />
-              <span class="thumb-title">POLITICS</span>
-            </div>
-            <h5 class="font-weight-600 mt-3">
-             {{item.Title}}
-            </h5>
+          <ng-container  *ngFor="let item of popularrNews;let i=index">
+          <div class="col-sm-6  mb-5 mb-sm-2"   *ngIf="i>0"  (click)="gotoNews(item)">
+         
+              <div class="position-relative image-hover">
+                <img
+                [src]="item.Images"
+                  class="img-fluid"
+                  alt="world-news"
+                />
+                <span class="thumb-title">{{item.Deptt}}</span>
+              </div>
+              <h5 class="font-weight-600 mt-3 cursor">
+               {{item.Title}}
+              </h5>
+            
+         
             
           </div>
+
+        </ng-container>
           
         </div>
       

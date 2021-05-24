@@ -9,25 +9,36 @@ import { URLs } from 'src/app/common/constant/constant';
   styleUrls: ['./news-content.component.scss']
 })
 export class NewsContentComponent implements OnInit {
-  url=URLs.getAPIUrl() +'singleRead.php';
-  params ={};
-  newsInfo ={};
-  constructor(private route:ActivatedRoute,private http:HttpClient) { }
+  url = URLs.getAPIUrl() + 'singleRead.php';
+  params:any = {};
+  newsInfo = {};
+  loader = false;
+  constructor(private route: ActivatedRoute, private http: HttpClient) { }
 
   ngOnInit(): void {
 
-    this.route.params.subscribe( params => this.params = params);
+    this.route.params.subscribe((params: any) => {
 
-    this.http.post(this.url, this.params).subscribe((x:any)=>{
+
+
+      this.params['uniqueID'] = atob(params.uniqueID);
+    }
+
+
+    );
+    this.loader = true;
+    this.http.post(this.url, this.params).subscribe((x: any) => {
       x.Images = URLs.getAPIUrl() + x.Images;
-      this.newsInfo =x;
-
+      this.newsInfo = x;
+      this.loader = false;
       console.log(x);
-   
-      
-    })
-  
 
-}
+
+    }, err => {
+      this.loader = false;
+    })
+
+
+  }
 
 }

@@ -33,6 +33,8 @@ url =URLs.getAPIUrl()+'createnews.php';
 
     Video: new FormControl(''),
 
+  
+
     Author: new FormControl('', [Validators.required]),
 
     Deptt: new FormControl('', [Validators.required]),
@@ -82,6 +84,7 @@ url =URLs.getAPIUrl()+'createnews.php';
     this.form.controls['Filter'].setValue( this.filterApplied);
     const obj = this.form.value;
     obj.images = this.imagePath;
+    obj.Date =   new Date();
    
     this.http.post(this.url,obj ).subscribe(x => {
       this.toastr.success('New News Added');

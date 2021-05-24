@@ -5,10 +5,10 @@
           <h1 class="text-center mt-5">
             India
           </h1>
-          <p class="text-secondary fs-15">
+          <!-- <p class="text-secondary fs-15">
             This text can be added in the category Description field in
             dashboard
-          </p>
+          </p> -->
         </div>
         <h5 class="text-muted font-weight-medium mb-3">National News</h5>
       </div>
@@ -21,9 +21,9 @@
               class="img-fluid"
               alt="world-news"
             />
-            <span class="thumb-title">{{mainNews[0].Deptt}}</span>
+            <span class="thumb-title" (click)="gotoNews(mainNews[0])">{{mainNews[0].Deptt}}</span>
           </div>
-          <h1 class="font-weight-600 mt-3">
+          <h1 class="font-weight-600 mt-3" (click)="gotoNews(mainNews[0])">
             {{mainNews[0].Title}}
           </h1>
           <p class="fs-15 font-weight-normal">
@@ -39,9 +39,9 @@
                   class="img-fluid"
                   alt="world-news"
                 />
-                <span class="thumb-title">POLITICS</span>
+                <span class="thumb-title">{{item.Deptt}}</span>
               </div>
-              <h5 class="font-weight-600 mt-3">
+              <h5 class="font-weight-600 mt-3 cursor" (click)="gotoNews(item)">
                {{item.Title}}
               </h5>
               

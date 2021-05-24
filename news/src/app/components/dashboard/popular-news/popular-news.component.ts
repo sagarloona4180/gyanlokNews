@@ -25,7 +25,7 @@ export class PopularNewsComponent implements OnInit {
       this.http.get(this.url).subscribe((x:any)=>{
       
         x.body.forEach((e:any,index:number) => {
-          if(index <4){
+          if(index <=4){
             e.Images = URLs.getAPIUrl() + e.Images;
             this.popularrNews.push(e);
           }
@@ -42,7 +42,7 @@ export class PopularNewsComponent implements OnInit {
     }
     gotoNews(n:any){
 
-      this.Route.navigate(['./news',n.uniqueID]);
+      this.Route.navigate(['./news',btoa(n.uniqueID)]);
     }
   
 }

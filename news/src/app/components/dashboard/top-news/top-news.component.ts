@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { map } from 'rxjs/operators';
 import { URLs } from 'src/app/common/constant/constant';
 
 @Component({
@@ -16,7 +16,11 @@ export class TopNewsComponent implements OnInit {
   constructor(private Route:Router,private http:HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get(this.url).subscribe((x:any)=>{
+    this.http.get(this.url)    
+    
+    .subscribe((x:any)=>{
+
+      x.body = x.body.sort((a:any, b:any) => new Date(b.Date).getTime() - new Date(a.Date).getTime());
     
       x.body.forEach((e:any) => {
          e.Images = URLs.getAPIUrl() + e.Images;
@@ -30,7 +34,7 @@ export class TopNewsComponent implements OnInit {
 
   gotoNews(n:any){
 
-    this.Route.navigate(['./news',n.uniqueID]);
+    this.Route.navigate(['./news',btoa(n.uniqueID)]);
   }
 
 }

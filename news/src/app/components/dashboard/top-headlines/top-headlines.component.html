@@ -16,24 +16,24 @@
           />
           <span class="thumb-title">{{stories.Deptt}}</span>
         </div>
-        <h5 class="font-weight-bold mt-3">
+        <h5  (click) ="gotoNews(stories)"   class="font-weight-bold mt-3 cursor">
             {{stories.Title}}
         </h5>
         <p class="fs-15 font-weight-normal">
           {{stories.Description.substring(0,80)}}
         </p>
-        <a (click) ="gotoNews(stories)"   class="font-weight-bold text-dark pt-2"
+        <a (click) ="gotoNews(stories)"   class="font-weight-bold cursor text-dark pt-2"
           >Read Article</a
         >
       </div>
     
     </div>
 
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-sm-12">
           <div class="d-flex position-relative cursor float-right">
             <h3 class="section-title">More</h3>
           </div>
         </div>
       </div>
-  </div>
+  </div> -->
