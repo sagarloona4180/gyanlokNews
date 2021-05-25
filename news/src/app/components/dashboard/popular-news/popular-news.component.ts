@@ -23,7 +23,7 @@ export class PopularNewsComponent implements OnInit {
   
     ngOnInit(): void {
       this.http.get(this.url).subscribe((x:any)=>{
-      
+        x.body = x.body.sort((a:any, b:any) => new Date(b.Date).getTime() - new Date(a.Date).getTime());
         x.body.forEach((e:any,index:number) => {
           if(index <=4){
             e.Images = URLs.getAPIUrl() + e.Images;
