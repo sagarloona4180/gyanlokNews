@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { URLs } from 'src/app/common/constant/constant';
 
 @Component({
@@ -18,7 +19,12 @@ latestNews :any[] = [];
 
 
   url=URLs.getAPIUrl() +'read.php';
-  constructor(private Route:Router,private http:HttpClient) { }
+  constructor(private  config: NgbCarouselConfig, private Route:Router,private http:HttpClient) { 
+
+   
+    config.keyboard = true;
+    config.pauseOnHover = true;
+  }
 
   ngOnInit(): void {
     this.http.get(this.url).subscribe((x:any)=>{
@@ -27,15 +33,18 @@ latestNews :any[] = [];
          e.Images = URLs.getAPIUrl() + e.Images;
       });
 
-      console.log(x.body);
-      this.mainNews = x.body;
+      const mainNews =  x.body.filter((e:any)=> new Date(e.Date).getDate()  === new Date().getDate());
+      if(mainNews.length > 0){
+        this.mainNews = mainNews;
+      }else{
+        this.mainNews = x.body;
+      }
+    
 
-      // this.mainNews.forEach((e:any,index:number )=> {
-        
-      // });
+    console.log('  this.mainNews', this.mainNews )
 
 
-      this.latestNews =this.mainNews;
+      this.latestNews = x.body;
       
     });
   }
@@ -45,5 +54,7 @@ latestNews :any[] = [];
 
     this.Route.navigate(['./news',btoa(n.uniqueID)]);
   }
+
+
 
 }

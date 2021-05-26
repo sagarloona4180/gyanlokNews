@@ -3,20 +3,20 @@
 
 
 
-    <ngb-carousel [showNavigationIndicators]="false" *ngIf="mainNews">
-      <ng-container *ngFor="let news of mainNews" >
+    <ngb-carousel  [showNavigationIndicators]="false" *ngIf="mainNews">
+      <ng-container   *ngFor="let news of mainNews" >
         <ng-template ngbSlide>
           <div class="picsum-img-wrapper">
             <img [src]="news.Images" alt="Random first slide">
           </div>
-          <div class="carousel-caption cursor">
+          <div class="carousel-caption cursor" (click)="gotoNews(news)">
             <h3>{{ news.Title}}</h3>
 
 
             <p class="text-color m-0 pt-2 d-flex align-items-center">
               <span class="fs-10 mr-1">{{news.Date}}</span>
               <i class="mdi mdi-bookmark-outline mr-3"></i>
-              <span class="fs-10 mr-1" (click)="gotoNews(news)">{{news.Author}}</span>
+              <span class="fs-10 mr-1" >{{news.Author}}</span>
               <i class="mdi mdi-comment-outline"></i>
             </p>
           </div>
@@ -62,7 +62,7 @@
           <h3 class="section-title">Latest News</h3>
         </div>
       </div>
-      <div class="col-sm-12" *ngFor="let news of latestNews | slice :0:6" >
+      <div class="col-sm-12" (click)="gotoNews(news)" *ngFor="let news of latestNews | slice :0:6" >
         <div class="border-bottom pb-3">
           <h5 class="font-weight-600 mt-0 mb-0 cursor">
             {{news.Title}}

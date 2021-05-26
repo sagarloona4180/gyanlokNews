@@ -21,7 +21,7 @@ export class TopHeadlinesComponent implements OnInit {
          e.Images = URLs.getAPIUrl() + e.Images;
       });
 
-      console.log(x.body);  x.body=  x.body.filter((e:any)=> e.Filter ==='H');
+      console.log(x.body);  x.body=  x.body.filter((e:any)=> e.Filter ==='H' && new Date(e.Date).getDate()  === new Date().getDate());
       this.todayNews = x.body;
       
     })

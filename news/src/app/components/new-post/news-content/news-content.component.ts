@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { URLs } from 'src/app/common/constant/constant';
+import { Title, Meta } from '@angular/platform-browser';
+
 
 @Component({
   selector: 'app-news-content',
@@ -13,10 +15,12 @@ export class NewsContentComponent implements OnInit {
   params:any = {};
   newsInfo = {};
   loader = false;
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute,  private titleService: Title,
+    private metaTagService: Meta , private http: HttpClient) { }
 
   ngOnInit(): void {
 
+   
     this.route.params.subscribe((params: any) => {
 
 
@@ -28,6 +32,11 @@ export class NewsContentComponent implements OnInit {
     );
     this.loader = true;
     this.http.post(this.url, this.params).subscribe((x: any) => {
+      this.titleService.setTitle(x.Title);
+      this.metaTagService.updateTag(
+        { news:x.Title }
+      );
+    
       x.Images = URLs.getAPIUrl() + x.Images;
       this.newsInfo = x;
       this.loader = false;

@@ -17,8 +17,8 @@
         </p>
 
         <app-content-image [newsInfo]="newsInfo"></app-content-image>
-        <p class="pt-4 pb-4 mb-4">
-            {{newsInfo.Description2}}
+        <p class="pt-4 pb-4 mb-4 sagar" [innerHtml]="newsInfo.Description2">
+           
           </p>
 
           <app-content-detail [newsInfo]="newsInfo"></app-content-detail>
