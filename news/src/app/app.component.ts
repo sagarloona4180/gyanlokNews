@@ -16,8 +16,8 @@ export class AppComponent {
   private currentUrl: string;
 
   constructor(private router: Router,private metaTagService: Meta) {
-
-
+    console.log(window.location);
+ 
     this.metaTagService.addTags([
       { name: 'keywords', content: 'News, Covid 19, jammu & kashmir,manoj sinha,kathua update,dc kathua' },
       { name: 'robots', content: 'index, follow' },

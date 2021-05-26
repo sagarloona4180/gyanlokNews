@@ -10,9 +10,9 @@ export class URLs {
       let http_origin = '';
       if (httpOrigin.indexOf('local') > 0) {
        
-        http_origin = 'http://localhost/scripts';
+        http_origin = 'https://gyanlok.000webhostapp.com/restAPi';
       } else{
-        http_origin = 'http://gyanloknews.in/restAPi';
+        http_origin = 'https://gyanlok.000webhostapp.com/restAPi';
       }
   
       return http_origin + '/';
