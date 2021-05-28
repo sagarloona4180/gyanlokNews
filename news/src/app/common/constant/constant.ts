@@ -3,6 +3,9 @@ export const APPLICATION_CONSTANT={
 }
 
 
+export const password = {
+       value :false
+}
 
 export class URLs {
     public static getAPIUrl(): string {
@@ -10,9 +13,9 @@ export class URLs {
       let http_origin = '';
       if (httpOrigin.indexOf('local') > 0) {
        
-        http_origin = 'https://gyanlok.000webhostapp.com/restAPi';
+        http_origin = 'http://gyanloknews.in/restAPi';
       } else{
-        http_origin = 'https://gyanlok.000webhostapp.com/restAPi';
+        http_origin = 'http://gyanloknews.in/restAPi';
       }
   
       return http_origin + '/';

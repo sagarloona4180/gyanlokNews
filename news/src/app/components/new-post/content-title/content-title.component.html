@@ -9,7 +9,7 @@
         </div>
         <p class="fs-15 d-flex justify-content-center align-items-center m-0">
             <img src="assets/icons/author.jpg" alt="" class="img-xs img-rounded mr-2" />
-            {{newsInfo.Author}}| {{newsInfo.Date}}
+            {{newsInfo.Author}}| {{newsInfo.Date |  date:'mediumDate'}}
         </p>
         <p class="pt-4 pb-4">
           {{newsInfo.Description}}

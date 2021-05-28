@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { URLs } from 'src/app/common/constant/constant';
+import { password, URLs } from 'src/app/common/constant/constant';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -48,13 +48,14 @@ url =URLs.getAPIUrl()+'createnews.php';
   fileName='No File Selected';
 
   Filter=["C","T","H","E","P"];
-  Department= ["Health","Policts","Country","State","District","Sports","Education","Art","Business","Internation"];
+  Department= ["Health","Policts","Country","State","District","Sports","Education","Art","Business","International"];
 
 
 
   constructor(private http:HttpClient,private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    password.value =false;
 
   }
 

@@ -23,7 +23,7 @@ export class EducationComponent implements OnInit {
 
   ngOnInit(): void {
     this.http.get(this.url).subscribe((x:any)=>{
-    
+      x.body = x.body.sort((a:any, b:any) => new Date(b.Date).getTime() - new Date(a.Date).getTime());
       x.body.forEach((e:any,index:number) => {
       
           e.Images = URLs.getAPIUrl() + e.Images;

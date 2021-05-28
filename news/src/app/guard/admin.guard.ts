@@ -1,6 +1,7 @@
 import {  Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { Observable } from 'rxjs';
+import { password } from '../common/constant/constant';
 
 
 @Injectable({
@@ -14,13 +15,12 @@ export class AdminGuard implements CanActivate {
 
 
       
-        // const x = prompt("Please enter your password", "");
-
-        // if (x === 'news12345') {
-        //     return true;
-        // } else {
-        //     return false;
-        // }
+     
+        if (password.value) {
+            return true;
+        } else {
+            return false;
+        }
 
         return true;
     }

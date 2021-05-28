@@ -91,7 +91,7 @@ const routes: Routes = [
   {
     path: "admin",
     component: AdminComponent,
-    //canActivate: [AdminGuard]
+    canActivate: [AdminGuard]
   },
 
     

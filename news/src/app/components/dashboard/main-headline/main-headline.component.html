@@ -14,7 +14,7 @@
 
 
             <p class="text-color m-0 pt-2 d-flex align-items-center">
-              <span class="fs-10 mr-1">{{news.Date}}</span>
+              <span class="fs-10 mr-1">{{news.Date |  date:'mediumDate'}}</span>
               <i class="mdi mdi-bookmark-outline mr-3"></i>
               <span class="fs-10 mr-1" >{{news.Author}}</span>
               <i class="mdi mdi-comment-outline"></i>
@@ -68,7 +68,7 @@
             {{news.Title}}
           </h5>
           <p class="text-color m-0 d-flex align-items-center">
-            <span class="fs-10 mr-1">{{news.Date}}</span>
+            <span class="fs-10 mr-1">{{news.Date |  date:'mediumDate'}}</span>
             <i class="mdi mdi-bookmark-outline mr-3"></i>
           
           </p>

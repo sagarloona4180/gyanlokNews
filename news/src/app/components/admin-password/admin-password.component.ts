@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { password } from 'src/app/common/constant/constant';
 
 @Component({
   selector: 'app-admin-password',
@@ -29,6 +30,7 @@ export class AdminPasswordComponent implements OnInit {
   go(){
     if(this.pass ==='news12345'){
       this.route.navigate(['./admin']);
+      password.value = true;
       this.renderer.removeClass(this.password.nativeElement,'show');
     }else{
       this.toastr.error('Passord not matched');
