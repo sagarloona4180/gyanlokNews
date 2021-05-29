@@ -11,7 +11,9 @@ import { URLs } from 'src/app/common/constant/constant';
 })
 export class BusinessComponent implements OnInit {
 
-  mainNews:any = [];
+  mainNews:any[] = [];
+  popularNews:any[] = [];
+
 
   
   
@@ -38,10 +40,10 @@ export class BusinessComponent implements OnInit {
 
   
  
-      x.body=  x.body.filter((e:any)=> e.Deptt ==='Business');
 
       
-      this.mainNews =x.body;
+      this.mainNews =x.body.filter((e:any)=> e.Deptt ==='Business' && e.Filter.toLowerCase() !=='p' );;
+      this.popularNews =x.body.filter((e:any)=> e.Deptt ==='Business' && e.Filter.toLowerCase() ==='p' );;
 
       console.log('Business', this.mainNews);
       

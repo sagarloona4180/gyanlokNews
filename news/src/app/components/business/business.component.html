@@ -30,9 +30,9 @@
             {{mainNews[0].Description}}
           </p>
         </div>
-        <div class="col-lg-6  mb-5 mb-sm-2">
+        <div class="col-lg-6  mb-5 mb-sm-2" *ngIf="mainNews.length >=2">
           <div class="row">
-            <div class="col-sm-6  mb-5 mb-sm-2" *ngFor="let item of mainNews">
+            <div class="col-sm-6  mb-5 mb-sm-2" *ngFor="let item of mainNews |slice :1:5">
               <div class="position-relative image-hover">
                 <img
                 [src]="item.Images"
@@ -50,27 +50,34 @@
           </div>
         
         </div>
-      </div>
-    <div class="row mt-5">
-      <div class="col-sm-12">
-        <h5 class="text-muted font-weight-medium mb-3">Popular News</h5>
-      </div>
-    </div>
-    <div class="row mb-4">
-      <div class="col-sm-3  mb-5 mb-sm-2"  *ngFor="let news of mainNews">
-        <div class="position-relative image-hover">
-          <img
-          [src]="news.Images"
-            class="img-fluid"
-            alt="world-news"
-          />
-          <span class="thumb-title">{{news.Deptt}}</span>
+
+        <div class="col-sm-12" *ngIf="mainNews.length >5">
+          <div class="d-flex position-relative cursor float-right">
+            <h3 class="section-title">More</h3>
+          </div>
         </div>
-        <h5 class="font-weight-600 mt-3">
-          {{news.Title}}
-        </h5>
       </div>
-   
-    </div>
+      <div class="row mt-5" *ngIf="popularNews && popularNews.length">
+        <div class="col-sm-12">
+          <h5 class="text-muted font-weight-medium mb-3">Popular News</h5>
+        </div>
+      </div>
+      <div class="row mb-4">
+        <div class="col-sm-3  mb-5 mb-sm-2"  *ngFor="let news of popularNews">
+          <div class="position-relative image-hover">
+            <img
+            [src]="news.Images"
+              class="img-fluid"
+              alt="world-news"
+            />
+            <span class="thumb-title">{{news.Deptt}}</span>
+          </div>
+          <h5 class="font-weight-600 mt-3">
+            {{news.Title}}
+          </h5>
+        </div>
+     
+      </div>
+    
   
   </div>

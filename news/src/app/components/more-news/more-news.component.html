@@ -1,0 +1,42 @@
+
+
+
+  <div class="container" >
+    <div class="row" *ngIf="params &&  params['group']">
+      <div class="col-sm-12">
+        <div class="text-center">
+          <h1 class="text-center mt-5">
+            {{params['group']}}
+          </h1>
+          <!-- <p class="text-secondary fs-15">
+            This text can be added in the category Description field in
+            dashboard
+          </p> -->
+        </div>
+      
+      </div>
+    </div>
+    <div class="row"  *ngIf="moreNews && moreNews.length ">
+        <div class="col-lg-12">
+          <div class="row">
+            <div class="col-sm-4  mb-5 mb-sm-2" *ngFor="let news of moreNews">
+              <div class="position-relative image-hover">
+                <img 
+                [src]="news.Images"
+                  class="img-fluid"
+                  alt="world-news"
+                />
+                <span class="thumb-title">{{news.Deptt}}</span>
+              </div>
+              <h5 class="font-weight-600 mt-3 cursor" (click)="gotoNews(news)">
+                {{news.Title}}
+              </h5>
+            </div>
+           
+          </div>
+      
+        </div>
+       
+      </div>
+
+    </div>

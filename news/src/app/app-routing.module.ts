@@ -11,6 +11,7 @@ import { EducationComponent } from './components/education/education.component';
 import { EmailUsComponent } from './components/email-us/email-us.component';
 import { InternationalComponent } from './components/international/international.component';
 import { LearningComponent } from './components/learning/learning.component';
+import { MoreNewsComponent } from './components/more-news/more-news.component';
 import { NewsContentComponent } from './components/new-post/news-content/news-content.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SportsComponent } from './components/sports/sports.component';
@@ -32,6 +33,12 @@ const routes: Routes = [
   {
     path: "news/:uniqueID",
     component: NewsContentComponent
+  },
+
+    
+  {
+    path: "more/:group",
+    component: MoreNewsComponent
   },
 
   {

@@ -41,6 +41,7 @@ import { LearningComponent } from './components/learning/learning.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { SubscribeUsComponent } from './components/subscribe-us/subscribe-us.component';
 import { EmailUsComponent } from './components/email-us/email-us.component';
+import { MoreNewsComponent } from './components/more-news/more-news.component';
 
 
 
@@ -78,7 +79,8 @@ import { EmailUsComponent } from './components/email-us/email-us.component';
     LearningComponent,
     AboutUsComponent,
     SubscribeUsComponent,
-    EmailUsComponent
+    EmailUsComponent,
+    MoreNewsComponent
 
   ],
   imports: [

@@ -11,7 +11,10 @@ import { URLs } from 'src/app/common/constant/constant';
 })
 export class InternationalComponent implements OnInit {
 
-  mainNews:any = [];
+
+  mainNews:any[] = [];
+  popularNews:any[] = [];
+
 
   
   
@@ -33,12 +36,11 @@ export class InternationalComponent implements OnInit {
       });
 
  
-     
 
-      x.body=  x.body.filter((e:any)=> e.Country.toLowerCase() !=='india');
 
       
-      this.mainNews =x.body;
+      this.mainNews =x.body.filter((e:any)=> e.Deptt.toLowerCase() ==='international' && e.Filter.toLowerCase()  !=='p');;
+      this.popularNews =  x.body.filter((e:any)=> e.Deptt.toLowerCase() ==='international' && e.Filter.toLowerCase()  ==='p');;
 
       console.log('Sports', this.mainNews);
  

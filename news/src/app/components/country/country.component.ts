@@ -11,7 +11,8 @@ import { URLs } from 'src/app/common/constant/constant';
 })
 export class CountryComponent implements OnInit {
 
-  mainNews:any = [];
+  mainNews:any[] = [];
+  popularNews:any[] = [];
 
   
   
@@ -35,12 +36,16 @@ export class CountryComponent implements OnInit {
 
  
      
-      x.body=  x.body.filter((e:any)=> e.Country.toLowerCase() ==='india' &&   e.Deptt ==='State');
+     const country =  x.body.filter((e:any)=> e.Country.toLowerCase() ==='india' &&   e.Filter.toLowerCase() !=='p'  &&  (e.Deptt ==='State' || e.Deptt ==='Country'));
 
+      const ppopular =  x.body.filter((e:any)=>  e.Country.toLowerCase() ==='india' && e.Filter.toLowerCase() ==='p'  &&   (e.Deptt ==='State' || e.Deptt ==='Country') );
       
-      this.mainNews =x.body;
+      this.mainNews  = country;
 
-      console.log('Sports', this.mainNews);
+      this.popularNews  = ppopular;
+
+      console.log(x.body)
+
   
  
       
@@ -49,5 +54,8 @@ export class CountryComponent implements OnInit {
   gotoNews(n:any){
 
     this.Route.navigate(['./news',btoa(n.uniqueID)]);
+  }
+  moreNews(){
+    this.Route.navigate(['./more',btoa('country')]);
   }
 }

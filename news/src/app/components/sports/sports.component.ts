@@ -10,8 +10,8 @@ import { URLs } from 'src/app/common/constant/constant';
 })
 export class SportsComponent implements OnInit {
 
-  mainNews:any = [];
-
+  mainNews:any[] = [];
+  popularNews:any[] = [];
   
   
   
@@ -33,14 +33,15 @@ export class SportsComponent implements OnInit {
       });
 
  
-     
 
-      x.body=  x.body.filter((e:any)=> e.Deptt ==='Sports');
 
       
-      this.mainNews =x.body;
+      this.mainNews =x.body.filter((e:any)=> e.Deptt ==='Sports' && e.Filter.toLowerCase() !=='p');;
 
-      console.log('Sports', this.mainNews);
+          
+      this.popularNews =x.body.filter((e:any)=> e.Deptt ==='Sports' && e.Filter.toLowerCase() ==='p');;
+
+    
  
       
     });

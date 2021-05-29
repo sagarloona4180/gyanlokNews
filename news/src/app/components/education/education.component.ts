@@ -10,7 +10,8 @@ import { URLs } from 'src/app/common/constant/constant';
   styleUrls: ['./education.component.scss']
 })
 export class EducationComponent implements OnInit {
-  mainNews:any = [];
+  mainNews:any[] = [];
+  popularNews:any[] = [];
 
   
   
@@ -35,13 +36,13 @@ export class EducationComponent implements OnInit {
  
      
 
-      x.body=  x.body.filter((e:any)=> e.Deptt ==='Education');
+      x.body=  
 
       
-      this.mainNews =x.body;
+      this.mainNews =x.body.filter((e:any)=> e.Deptt ==='Education' && e.Filter.toLowerCase() !=='p');;
+      this.popularNews =x.body.filter((e:any)=> e.Deptt ==='Education' && e.Filter.toLowerCase() ==='p');;
 
-      console.log('Sports', this.mainNews);
- 
+   
       
     });
   }
