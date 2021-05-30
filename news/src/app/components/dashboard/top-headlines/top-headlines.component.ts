@@ -22,7 +22,7 @@ export class TopHeadlinesComponent implements OnInit,OnDestroy {
          e.Images = URLs.getAPIUrl() + e.Images;
 
          this.metaTagService.addTags([
-          { name: 'news',  content: e.Title },
+          { property: 'name', httpEquiv:'origin-trial', content: e.Title },
         
          
           
@@ -34,7 +34,6 @@ export class TopHeadlinesComponent implements OnInit,OnDestroy {
         
       });
 
-  
 
 
 
@@ -52,7 +51,9 @@ export class TopHeadlinesComponent implements OnInit,OnDestroy {
   }
 
   ngOnDestroy(){
+    this.metaTagService.removeTag("property='name'");
 
+  
   }
 
 }

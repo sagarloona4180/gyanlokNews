@@ -22,7 +22,7 @@ export class AppComponent {
  
     const locale: MetaDefinition   =  { property: 'og:locale', content: 'en_US' };
     const website: MetaDefinition = { property: 'og:type', content: 'Website'};
-    const titleService: MetaDefinition = { property: 'og:title', content: 'Gyan Lok  -India News| World New|Sports News Jammu News | Kashmir News | Ladakh | Latest News | JK'};
+    const titleService: MetaDefinition = { property: 'og:title', content: 'Gyan Lok  -India News| World New |Sports News Jammu News | Kashmir News | Ladakh | Latest News | JK'};
     const ogdesc: MetaDefinition = { name: 'og:description', content: 'Gyan Lok  provides the latest news stories from India,  Jammu Kashmir and Ladakh , India and the World.Get todays headlines from politics,sports,business'};
  
 
