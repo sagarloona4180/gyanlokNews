@@ -7,6 +7,10 @@ export const password = {
        value :false
 }
 
+export const wheather:any ={
+  value:null
+}
+
 export class URLs {
     public static getAPIUrl(): string {
       const httpOrigin = window.location.origin;

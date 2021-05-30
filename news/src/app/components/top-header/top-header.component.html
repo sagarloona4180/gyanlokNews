@@ -1,11 +1,52 @@
 <header id="header">
   <div class="container">
+ <div class="row media">
+  <div class="col-sm-3" >
+    <div class="twitter">
+      <a  href="https://twitter.com/gyanlok4?ref_src=twsrc%5Etfw" class="twitter-follow-button"
+       data-show-count="false"> <i _ngcontent-uph-c127="" class="mdi mdi-twitter"></i> 
+       <span> Follow @gyanlok4 </span></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    
+  </div>
+
+<div class="col-sm-3" >
+     <div class="fb">
+      <div class="fb-like" data-href="https://www.facebook.com/gyanlok247" data-width="150px" data-layout="button_count" data-action="like" data-size="large" data-share="false"></div>
+  
+     </div>
+    
+    
+  </div>
+ 
+  <div class="col-sm-3" >
+    <div  class="yt">
+
+    
+    <div class="g-ytsubscribe" data-channelid="UCF7ovsbqvMt_c4gQCLOyqIg" data-layout="default" data-theme="dark" data-count="default"></div>
+  
+  </div>
+  </div>
+ <!-- 
+  <div class="col-sm-3" >
+    <div class="twitter">
+      <a  href="https://twitter.com/gyanlok4?ref_src=twsrc%5Etfw" class="twitter-follow-button"
+       data-show-count="false"> <i _ngcontent-uph-c127="" class="mdi mdi-twitter"></i> 
+       <span> Follow @gyanlok4 </span></a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    
+  </div> -->
+
+ </div>
+   
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="d-flex justify-content-between align-items-center navbar-top">
         <ul class="navbar-left">
           <li>{{current_date | date: 'M/d/yy, h:mm a'}}</li>
-          <!-- <li>30°C,London</li> -->
+          <li *ngIf="temp">{{temp?.main?.temp}}°C,{{temp?.name}} ,{{temp.weather && temp.weather.length ? temp.weather[0].description:''}}</li>
+        
+
         </ul>
         <div>
           <a class="navbar-brand" href="#"

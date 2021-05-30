@@ -1,7 +1,35 @@
 .navbar-brand{
-
+   
+    
     img{
         height: 96px;
         width: 96px;
+    }
+}
+
+.navbar-left{
+    li{
+        font-weight: 500 !important;
+    }
+
+}
+
+.media{
+    margin-top:8px;
+    background: beige;
+    .twitter{
+        height: 25px;
+        background: #1b95e0;
+        width:150px;
+        a{
+            
+            color:#fff;
+            text-decoration: unset;;
+            font-size: 12px;
+    
+            i{
+               padding: 5px;
+            }
+        }
     }
 }
