@@ -51,7 +51,13 @@ export class TopHeadlinesComponent implements OnInit,OnDestroy {
   }
 
   ngOnDestroy(){
-    this.metaTagService.removeTag("property='name'");
+
+const x =this.metaTagService.getTag('property') ;
+if(x){
+  this.metaTagService.
+    removeTagElement(x);
+}
+  
 
   
   }

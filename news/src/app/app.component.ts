@@ -2,8 +2,8 @@
 import { Component } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Meta, MetaDefinition } from '@angular/platform-browser'; 
+import { interval } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { wheather } from './common/constant/constant';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,12 +12,13 @@ import { wheather } from './common/constant/constant';
 export class AppComponent {
   title = 'news';
 
-
-
+  covidDetail =true;
+  covid19:any[] = [];
   private previousUrl: string ='';
   private currentUrl: string;
 
-  constructor( private metaTagService: Meta ,private router: Router) {
+   covidData:any = null;
+  constructor( private http:HttpClient,private metaTagService: Meta ,private router: Router) {
 
  
     const locale: MetaDefinition   =  { property: 'og:locale', content: 'en_US' };
@@ -53,6 +54,27 @@ export class AppComponent {
         console.log(this.previousUrl ,this.previousUrl);
       };
     });
+
+
+
+    this.http.get('assets/covid.json').subscribe((x:any)=>{
+
+      this.covid19 = x;
+      let count  =0;
+      interval(10000).subscribe(x => {
+         count =count +1;
+         if(this.covid19 && this.covid19.length && count >= this.covid19.length){
+           count =0;
+         }
+  
+         this.covidData = this.covid19[count];
+  
+  
+        
+    });
+    })
+   
+    
   }
 
   public getPreviousUrl() {
@@ -62,7 +84,9 @@ export class AppComponent {
   
 
 
-
+  tracker(){
+    this.covidDetail =false;
+  }
  
 
 

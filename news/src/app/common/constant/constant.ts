@@ -43,3 +43,12 @@ export class URLs {
       }
     }
   }
+
+
+  export const Translate ={
+    metaDATA:{}
+  }
+
+
+
+  

@@ -44,7 +44,7 @@
       <div class="d-flex justify-content-between align-items-center navbar-top">
         <ul class="navbar-left">
           <li>{{current_date | date: 'M/d/yy, h:mm a'}}</li>
-          <li *ngIf="temp">{{temp?.main?.temp}}°C,{{temp?.name}} ,{{temp.weather && temp.weather.length ? temp.weather[0].description:''}}</li>
+          <li *ngIf="temp && temp.main">{{temp?.main?.temp}}°C,{{temp?.name}} ,{{temp.weather && temp.weather.length ? temp.weather[0].description:''}}</li>
         
 
         </ul>
