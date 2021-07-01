@@ -1,0 +1,43 @@
+
+
+@media only screen and (min-width: 1000px)  {
+  .navbar-close{
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .twitter{
+    margin: auto;
+  }
+   .fb-like{
+    margin-left: 33%;
+    // margin-top: 10px ;
+    width:150px;
+   }
+
+   .yt{
+    margin-left: 33%;
+    // margin-top: 10px  !important;
+    width:150px;
+   }
+}
+
+
+
+@media only screen and (max-width: 550px) {
+  .twitter{
+    margin: auto;
+  }
+   .fb-like{
+    margin-left: 33%;
+     margin-top: 10px ;
+    width:150px;
+   }
+
+   .yt{
+    margin-left: 33%;
+   margin-top: 10px  !important;
+    width:150px;
+   }
+}
