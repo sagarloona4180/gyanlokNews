@@ -1,0 +1,17 @@
+<kendo-treelist [data]="rootData"
+[fetchChildren]="fetchChildren"
+[hasChildren]="hasChildren"
+[height]="410"
+[isExpanded]="isExpanded"
+(expand)="onExpand($event)"
+(collapse)="onCollapse($event)"
+kendoTreeListExpandable>
+
+<ng-container  *ngFor="let col of columns">
+    <kendo-treelist-column    [expandable]="col?.expandable"   [title]="col.title"   [field]="col.field"  [width]="300">
+
+    </kendo-treelist-column>
+</ng-container>
+
+
+</kendo-treelist>

@@ -1,20 +1,33 @@
-<div class="container-scroller">
-    <div class="main-panel">
-        <app-top-header> </app-top-header>
-        <router-outlet></router-outlet>
-        <app-footer></app-footer>
-    </div>
 
-</div>
+  <!-- <kendo-grid [data]="gridData" [height]="410" [loading]="isloading"  [columnMenu]="{ filter: true }">
+    <kendo-grid-column
+ [title]="col.title"
+      *ngFor="let col of columns"
+      [field]="col.field"
+    >
+    <ng-template kendoGridCellTemplate let-dataItem  *ngIf="col.field ==='Status'">
+       
+        <div class="status">{{ col.field}}</div>
+      </ng-template>
+</kendo-grid-column>
+  </kendo-grid>  -->
 
-<div class="tracker" *ngIf="covidData && covidDetail" >
-    <i class="closed mdi  mdi-close" (click)="tracker()"></i>
-    <div class="title"> Covid 19</div>
-    <span class="place"> {{covidData.state}}</span>
-    <span class="text"> {{covidData.description}}</span>
-    <hr />
-    <span><span  class="Content"> {{covidData.newCases}} </span> <span> New Cases</span> </span>
-    <hr />
-    <span > <span  class="Content"> {{covidData.death}} </span> <span> Death's</span> </span>
 
-</div>
+  
+<!-- <kendo-grid [kendoGridBinding]="gridData" [filterable]="true" [height]="410" [loading]="isloading"  [columnMenu]="{ filter: true }">
+    <kendo-grid-column
+ [title]="col.title"
+      *ngFor="let col of columns"
+      [field]="col.field"
+    >
+    <ng-template kendoGridCellTemplate let-dataItem  *ngIf="col.field ==='Status'">
+       
+        <div class="status">{{ col.field}}</div>
+      </ng-template>
+</kendo-grid-column>
+  </kendo-grid>  -->
+
+  <!-- <app-tree></app-tree> -->
+
+
+  <app-master></app-master>

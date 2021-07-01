@@ -45,6 +45,17 @@ import { MoreNewsComponent } from './components/more-news/more-news.component';
 
 
 
+import {
+  GridModule,
+  PDFModule,
+  ExcelModule,
+} from "@progress/kendo-angular-grid";
+import { TreeComponent } from './tree/tree.component';
+import { MasterDetailComponent } from './master-detail/master-detail.component';
+import { TreeListModule } from '@progress/kendo-angular-treelist';
+import { MasterComponent } from './master/master.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -80,15 +91,20 @@ import { MoreNewsComponent } from './components/more-news/more-news.component';
     AboutUsComponent,
     SubscribeUsComponent,
     EmailUsComponent,
-    MoreNewsComponent
+    MoreNewsComponent,
+    TreeComponent,
+    MasterDetailComponent,
+    MasterComponent
 
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     NgbModule, BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule,PDFModule,
+    ExcelModule,
     ToastrModule.forRoot({
 
       timeOut: 30000,
@@ -96,7 +112,11 @@ import { MoreNewsComponent } from './components/more-news/more-news.component';
       positionClass: 'toast-top-right',
       preventDuplicates: true,
       toastClass: 'toast toast-bootstrap-compatibility-fix'
-    })
+    }),
+    GridModule,
+    TreeListModule,
+    MatMenuModule,
+    MatIconModule
   ],
   providers: [  {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]

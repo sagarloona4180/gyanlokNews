@@ -1,0 +1,115 @@
+
+<kendo-grid [data]="gridData" scrollable="virtual" [rowHeight]="40" [rowClass]="rowCallback"
+  [kendoGridExpandDetailsBy]="expandDetailsBy" [(expandedDetailKeys)]="expandedDetailKeys"
+  (detailExpand)="onExpandHandler($event)"   [sortable]="{
+    allowUnsort: false,
+    mode: 'single'
+  }"
+  [sort]="sort"
+  (sortChange)="sortChange($event)">
+  <kendo-grid-column [title]="col.title" [width]="col.width" *ngFor="let col of columns" [field]="col.field">
+
+    <ng-template kendoGridHeaderTemplate let-column let-columnIndex="columnIndex">
+      <div class='header'>
+        <div class="action-one">
+
+       <em  [matMenuTriggerFor]="menu1" class="k-icon k-i-more-vertical"> </em> 
+
+          <mat-menu  #menu1="matMenu">
+            <button mat-menu-item>
+              <!-- <mat-icon>dialpad</mat-icon> -->
+              <span>Add Client</span>
+            </button>
+       
+          </mat-menu>
+        </div>
+
+     
+        <div class="title">
+          {{column.title}}
+        </div>
+
+      </div>
+    </ng-template>
+
+
+    <ng-template kendoGridCellTemplate let-dataItem let-rowIndex="rowIndex">
+      <div class='data'>
+        <div class="action-one">
+
+          <em  [matMenuTriggerFor]="menu2" class="k-icon k-i-more-vertical"> </em>
+          <mat-menu   #menu2="matMenu">
+            <button mat-menu-item>
+              <!-- <mat-icon>dialpad</mat-icon> -->
+              <span>Add Engagement</span>
+            </button>
+       
+          </mat-menu>
+
+        </div>
+
+        <div class="action-two">
+
+          <em class="k-icon" (click)="expand(dataItem)"
+            [ngClass]="{'k-i-minus': expandedDetailKeys.includes(dataItem.id),'k-i-plus': !expandedDetailKeys.includes(dataItem.id)}">
+          </em>
+
+
+        </div>
+        <div class="title">
+          {{dataItem.ProductID}}
+        </div>
+
+      </div>
+    </ng-template>
+
+  </kendo-grid-column>
+  <div class="nested-table" *kendoGridDetailTemplate="let dataItem">
+    <kendo-grid [data]="dataItem.children"    [sortable]="{
+      allowUnsort: false,
+      mode: 'single'
+    }"
+    [sort]="innersort"
+    (sortChange)="sortinnerChange($event)"  [rowClass]="rowInCallback" [style.height.%]="99">
+      <kendo-grid-column [title]="in.title" *ngFor="let in of incolumns" [field]="in.field">
+
+
+
+        <ng-template kendoGridCellTemplate let-dataItem *ngIf="in.field ==='ProductID'">
+
+
+          <div class="col-data">
+            <span class="action"> <em  [matMenuTriggerFor]="menu3" class="k-icon k-i-more-vertical"> </em></span>
+            <span class="action-with-val">{{ in.field}}</span>
+
+
+            <mat-menu #menu3="matMenu">
+              <button mat-menu-item>
+                <!-- <mat-icon>dialpad</mat-icon> -->
+                <span>Edit Engagement</span>
+              </button>
+         
+            </mat-menu>
+          </div>
+
+        </ng-template>
+        <ng-template kendoGridCellTemplate let-dataItem *ngIf="in.field ==='Status'">
+
+          <div class="status">{{ in.field}}</div>
+
+
+        </ng-template>
+      </kendo-grid-column>
+
+      <ng-template kendoGridNoRecordsTemplate>
+      <a> No Record Found  </a>  
+       </ng-template>
+    </kendo-grid>
+  </div>
+
+
+
+  <ng-template kendoGridNoRecordsTemplate>
+  No Record Found
+ </ng-template>
+</kendo-grid>

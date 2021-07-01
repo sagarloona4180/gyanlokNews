@@ -1,0 +1,155 @@
+.k-grid .k-hierarchy-cell {
+    width: 0;
+  }
+
+  .k-grid .k-header.k-hierarchy-cell {
+    border: none;
+  }
+
+  .k-grid .k-hierarchy-cell .k-icon {
+    display: none;
+  }
+
+  .k-grid .k-hierarchy-col {
+    width: 1px;
+  }
+
+ 
+      .action-one,.action-two,.title{
+          display: inline-block;
+      }
+
+      .header{
+        .action-one{
+            padding-left: 0;
+              }
+    
+              .action-two{
+                padding-left: 3rem;
+            }
+              .title{
+                padding-left: 3rem;
+                font-size: 14px;
+                font-weight: 600;
+                color: #000;
+            }
+              
+      }
+
+      .data{
+        .action-one{
+            padding-left: 0;
+              }
+    
+              .action-two{
+                padding-left: 3rem;
+            }
+              .title{
+                padding-left: 1rem;
+              }
+      }
+
+
+      .k-detail-cell{
+
+      padding:0 !important;
+        .nested-table{
+          .k-grid-header{
+            background-color: #F1F0F6 ;
+            font-size:14px;
+            font-weight: 700;;
+            //padding-left: 6rem !important;
+
+          .k-header:first-child {
+              border-left-width: 5rem !important;
+
+            }
+            
+         }
+
+        
+      }
+    
+      
+        
+    }
+
+
+
+    .k-grid-content{
+      overflow: hidden;
+  }
+  
+  
+  .k-grid tr.even { background-color: #fff; }
+  .k-grid tr.odd { background-color: #F5F4F9 }
+  .k-grid tr.ineven { background-color: #F5F4F9; }
+  .k-grid tr.inodd { background-color: #F1F0F6 }
+
+
+  ineven > td:first-child{
+    border-left-width: 5rem;
+  }
+
+  
+         
+  
+  .k-grid tr.ineven th:first-child, .k-grid tr.ineven td:first-child {
+    border-left-width: 5rem;
+  }
+
+  .k-grid tr.inodd th:first-child, .k-grid tr.inodd td:first-child {
+    border-left-width: 5rem;
+  }
+
+  .col-data{
+    span.action-with-val{
+      padding-left: 1rem;;
+    }
+
+  }
+      
+  .k-grid tbody td {
+    white-space: nowrap;
+    line-height: 20px;
+    padding: 10px 12px;
+  }
+
+
+  .k-grid-header-wrap thead th {
+    white-space: nowrap;
+    line-height: 20px;
+    padding: 10px 12px;
+  }
+
+
+
+  .mat-menu-item:hover:not([disabled]), .mat-menu-item.cdk-program-focused:not([disabled]), .mat-menu-item.cdk-keyboard-focused:not([disabled]), .mat-menu-item-highlighted:not([disabled]){
+    background-color: #fff !important;
+  }
+
+
+  .button:focus{
+    outline: unset !important;
+  }
+
+  .k-icon:hover{
+    background: grey;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    cursor: pointer;
+}
+
+
+
+.k-icon{
+  height: 24px;
+    width: 24px;
+    font-size: 24px;
+}
+
+
+.k-grid-header[style]{
+  padding: 0px 0px 0px 0px !important;
+}

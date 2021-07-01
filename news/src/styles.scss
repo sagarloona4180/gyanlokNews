@@ -30,3 +30,26 @@
 .cursor {
     cursor: pointer;
 }
+
+
+@import "~@progress/kendo-theme-material/dist/all.scss";
+
+// body{
+//     overflow: hidden;
+// }
+
+.k-grid-content{
+    overflow: hidden;
+}
+
+
+.k-grid tr.even { background-color: #fff; }
+.k-grid tr.odd { background-color: #F5F4F9 }
+.k-grid tr.ineven { background-color: #F5F4F9; }
+.k-grid tr.inodd { background-color: #F1F0F6 }
+
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
